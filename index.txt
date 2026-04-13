@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>絨日 RongRi | 台南羊毛氈手作・毛孩訂製</title>
+    <meta name="description" content="絨日 RongRi｜台南羊毛氈手作，擬真毛孩訂製。將記憶收進木框，讓生命力破框而出。每一件作品都是慢工細活的結晶，為你的毛孩留下獨一無二的溫暖紀念。">
+    <meta property="og:title" content="絨日 RongRi｜台南羊毛氈手作・毛孩訂製">
+    <meta property="og:description" content="將記憶收進木框，讓生命力破框而出。擬真羊毛氈，為你的毛孩留下獨一無二的溫暖紀念。">
+    <meta property="og:image" content="https://res.cloudinary.com/dkon1zhws/image/upload/og-cover.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="絨日 RongRi｜台南羊毛氈手作">
+    <meta name="twitter:description" content="將記憶收進木框，讓生命力破框而出。">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dkon1zhws/image/upload/og-cover.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "絨日 RongRi 羊毛氈手作",
+      "description": "台南羊毛氈手作，擬真毛孩訂製。將記憶收進木框，讓生命力破框而出。",
+      "url": "https://rongri-handmade.com",
+      "image": "https://res.cloudinary.com/dkon1zhws/image/upload/og-cover.jpg",
+      "address": { "@type": "PostalAddress", "addressLocality": "台南市", "addressCountry": "TW" },
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "url": "https://lin.ee/s0l2IFG" },
+      "sameAs": [
+        "https://www.instagram.com/rongri_handmade/",
+        "https://www.facebook.com/profile.php?id=61577161323314",
+        "https://www.threads.com/@rongri_handmade"
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* ═══════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════ */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.hero-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s cubic-bezier(0.77,0,0.175,1);
+}
+.hero-carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(253,250,245,0.55) 0%,
+        rgba(253,250,245,0.35) 40%,
+        rgba(253,250,245,0.72) 80%,
+        rgba(253,250,245,0.95) 100%
+    );
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 140px 20px 80px;
+    width: 100%;
+}
+.hero-logo {
+    width: 130px;
+    height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 2px 12px rgba(166,139,124,0.18));
+}
+.hero-brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    color: var(--primary-warm);
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+}
+.hero-slogan {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+    color: #6b5a50;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hero-btn-primary {
+    background: var(--primary-warm);
+    color: #fff;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: 1.5px solid var(--primary-warm);
+}
+.hero-btn-primary:hover {
+    background: transparent;
+    color: var(--primary-warm);
+    transform: translateY(-2px);
+}
+.hero-btn-secondary {
+    background: transparent;
+    color: var(--primary-warm);
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: 1.5px solid var(--primary-warm);
+    transition: all 0.3s ease;
+}
+.hero-btn-secondary:hover {
+    background: var(--primary-warm);
+    color: #fff;
+    transform: translateY(-2px);
+}
+.hero-dots {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+}
+.hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(166,139,124,0.3);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+.hero-dot.active {
+    background: var(--primary-warm);
+    width: 22px;
+    border-radius: 4px;
+}
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: bounceDown 2s ease-in-out infinite;
+}
+.hero-scroll-hint span {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--primary-warm);
+    opacity: 0.6;
+}
+.hero-scroll-hint svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+}
+@keyframes bounceDown {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ═══════════════════════════════════════
+   TYPE CARDS WITH IMAGES
+═══════════════════════════════════════ */
+.price-grid-v2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+.price-card-v2 {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(166,139,124,0.12);
+    transition: all 0.35s ease;
+}
+.price-card-v2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(166,139,124,0.14);
+}
+.price-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+.price-card-body {
+    padding: 1.8rem 1.6rem;
+    text-align: center;
+}
+.price-card-body h4 {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+.price-card-body .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--primary-warm);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+.price-card-body p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════
+   LEAD TIME BADGE
+═══════════════════════════════════════ */
+.lead-time-banner {
+    background: linear-gradient(135deg, #fdf6f0, #faf0e8);
+    border: 1px solid rgba(166,139,124,0.2);
+    border-radius: 12px;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.lead-time-icon {
+    font-size: 1.4rem;
+}
+.lead-time-text {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--primary-warm);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.lead-time-text span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 4px;
+}
+
+/*═══════════════════════════════════════
+   CONTACT MULTI-CHANNEL
+═══════════════════════════════════════ */
+.contact-channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.channel-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 1.4rem;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+.channel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+.channel-card.line-card  { border-color: #06C755; color: #06C755; }
+.channel-card.ig-card    { border-color: #C13584; color: #C13584; }
+.channel-card.fb-card    { border-color: #1877F2; color: #1877F2; }
+.channel-card.threads-card { border-color: #000; color: #333; }
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.line-card .channel-icon   { background: rgba(6,199,85,0.1); }
+.ig-card .channel-icon     { background: rgba(193,53,132,0.1); }
+.fb-card .channel-icon     { background: rgba(24,119,242,0.1); }
+.threads-card .channel-icon { background: rgba(0,0,0,0.06); }
+.channel-info-label {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    display: block;
+    line-height: 1.2;
+}
+.channel-info-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: block;
+}
+
+/* ═══════════════════════════════════════
+   SHOP SECTION UPGRADE
+═══════════════════════════════════════ */
+.shop-section {
+    padding: 80px 0;
+    text-align: center;
+}
+.shop-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--primary-warm);
+    margin: 12px auto 2.5rem;
+    opacity: 0.5;
+}
+.shop-platforms {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* ═══════════════════════════════════════
+   PROCESS SECTION UPGRADE
+═══════════════════════════════════════ */
+.process-pricing-section {
+    padding: 100px 0;
+    scroll-margin-top: 80px;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+    .price-grid-v2 { grid-template-columns: 1fr; max-width: 380px; margin: 3rem auto; }
+    .contact-channels { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+    .hero-content { padding: 120px 20px 60px; }
+    .hero-logo { width: 110px; }
+    .hero-cta-group { flex-direction: column; align-items: center; }
+    .hero-btn-primary, .hero-btn-secondary { width: 260px; text-align: center; }
+    .contact-channels { grid-template-columns: 1fr; }
+    .lead-time-banner { padding: 1rem 1.2rem; }
+  }
+    </style>
+</head>
+<body>
+
+<div class="background-overlay"></div>
+
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">絨日 RongRi</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">品牌故事</a>
+            <a href="#shop">前往選購</a>
+            <a href="#process">訂製流程</a>
+            <a href="#gallery">作品集</a>
+            <a href="#contact">聯絡我們</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero-section fade-in">
+    <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-carousel-track" id="heroTrack">
+            <div class="hero-carousel-slide" style="background-image:url('https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg')"></div>
+            <div class="hero-carousel-slide" style="background-image:url('https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg')"></div>
+            <div class="hero-carousel-slide" style="background-image:url('https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg')"></div>
+            <div class="hero-carousel-slide" style="background-image:url('https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg')"></div>
+            <div class="hero-carousel-slide" style="background-image:url('https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/Logo.png" alt="RongRi Logo" class="hero-logo" fetchpriority="high">
+        <h1 class="hero-brand-name">RongRi 絨日｜羊毛氈手作</h1>
+        <p class="hero-slogan">將記憶收進木框，讓生命力破框而出</p>
+        <div class="hero-cta-group">
+            <a href="#process" class="hero-btn-primary">立即訂製</a>
+            <a href="#gallery" class="hero-btn-secondary">欣賞作品</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+        <span>SCROLL</span>
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-warm);"/>
+        </svg>
+    </div>
+
+    <div class="hero-dots" id="heroDots">
+        <button class="hero-dot active" data-idx="0"></button>
+        <button class="hero-dot" data-idx="1"></button>
+        <button class="hero-dot" data-idx="2"></button>
+        <button class="hero-dot" data-idx="3"></button>
+        <button class="hero-dot" data-idx="4"></button>
+    </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section about-story-curated reveal-section">
+    <div class="story-border-box">
+        <span class="story-tag">BRAND STORY</span>
+        <h2 class="story-title">關於絨日 RongRi</h2>
+        <p class="story-slogan-gold">將記憶收進木框，讓生命力破框而出。</p>
+        <div class="story-main-text">
+            <p class="drop-cap">「絨日 RongRi」誕生於對生命的紀念與對手工藝術的熱愛。我們專注於擬真羊毛氈創作，透過指尖千萬次的戳刺，將柔軟的羊毛纖維轉化為具備溫度的立體藝術。</p>
+            <div class="story-detail-grid">
+                <div class="story-detail-item">
+                    <h3><span>01.</span> 品牌理念：生命力與溫度</h3>
+                    <p>手作的魅力在於那些無法被完全複製的細微之處。生命力往往存在於框架之外，因此我們的作品不僅是單純的模仿，更是捕捉那些靈動特徵，讓作品在框架之外，展現出獨有的生命力與溫暖神韻。</p>
+                </div>
+                <div class="story-detail-item">
+                    <h3><span>02.</span> 我們的堅持：每一份唯一</h3>
+                    <p>在「絨日」，每一件作品都是慢工細活的結晶。從觀察神態、選色到塑形，我們投入大量的時間與耐心，確保每一隻創作出的小生命都擁有獨一無二的靈魂。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SHOP ═══ -->
+<div id="shop" class="shop-section reveal-section">
+    <div class="container">
+        <span class="section-tag">前往選購</span>
+        <div class="shop-divider"></div>
+        <div class="shop-platforms">
+            <a href="https://pinkoi.com/rongri-handmade" target="_blank" rel="noopener noreferrer" class="btn-shop">Pinkoi</a>
+            <a href="https://tw.shp.ee/PvjZxCvd" target="_blank" rel="noopener noreferrer" class="btn-shop">蝦皮購物</a>
+            <a href="https://myship.7-11.com.tw/general/detail/GM2602214413849" target="_blank" rel="noopener noreferrer" class="btn-shop">賣貨便</a>
+        </div>
+        <div class="social-buttons">
+            <a href="https://lin.ee/s0l2IFG" target="_blank" rel="noopener noreferrer">LINE</a>
+            <a href="https://www.threads.com/@rongri_handmade?hl=zh-tw" target="_blank" rel="noopener noreferrer">Threads</a>
+            <a href="https://www.facebook.com/profile.php?id=61577161323314" target="_blank" rel="noopener noreferrer">FB</a>
+            <a href="https://www.instagram.com/rongri_handmade/" target="_blank" rel="noopener noreferrer">IG</a>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" class="process-pricing-section reveal-section">
+  <div class="container">
+    <div class="process-header">
+      <span class="section-tag">Ordering Process</span>
+      <h2 class="section-title">訂製流程與報價</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- 款式圖卡 -->
+    <div class="price-grid-v2">
+      <div class="price-card-v2">
+  <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg" alt="全身鋪毛款示例" class="price-card-img" loading="lazy">
+  <div class="price-card-body">
+    <h4>全身鋪毛款</h4>
+    <span class="price">$2,500 – $3,500</span>
+    <p>完整呈現毛孩可愛體態</p>
+  </div>
+</div>
+      <div class="price-card-v2">
+  <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg" alt="探頭相框款示例" class="price-card-img" loading="lazy">
+  <div class="price-card-body">
+    <h4>探頭相框款</h4>
+    <span class="price">$2,000 – $3,000</span>
+    <p>破框而出的視覺感</p>
+  </div>
+</div>
+    </div>
+    <p class="price-notice">＊實際價格依花色複雜度及姿勢難度有所調整。</p>
+
+    <!-- 製作時間提示 -->
+    <div class="lead-time-banner">
+        <span class="lead-time-icon">🗓️</span>
+        <span class="lead-time-text">平均製作週期約 <span>4 – 8 週</span>，若有送禮期限請提早告知</span>
+    </div>
+
+    <div class="combined-grid">
+      <div class="process-steps-text">
+        <div class="step-item">
+          <span class="step-no">01.</span>
+          <div class="step-info">
+            <h4>私訊諮詢與報價</h4>
+            <p>請提供毛孩正面、背面及側面的清晰照片，並說明希望訂製的姿勢，我們將根據花色複雜度提供準確報價與預計製作時程。若照片不齊全也歡迎先詢問，我們會一起評估可行性。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-no">02.</span>
+          <div class="step-info">
+            <h4>支付訂金並排單</h4>
+            <p>確認報價後，支付訂金 $1,000 即完成正式排單。訂單成立後，恕不接受中途取消或大幅度變更訂製需求。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-no">03.</span>
+          <div class="step-info">
+            <h4>手工製作與確認</h4>
+            <p>作品完成後將傳送成品照片確認。提供 2 次細節微調機會，以照片特徵優化為主。手工製作需投入大量時間，請耐心等候。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-no">04.</span>
+          <div class="step-info">
+            <h4>結帳與交貨</h4>
+            <p>支付尾款後安排出貨。目前提供「7-11 賣貨便」寄送，或預約「台南市區」指定地點面交。</p>
+          </div>
+        </div>
+      </div>
+      <div class="notice-sidebar">
+        <div class="notice-card">
+          <h3>下單前須知 Notice Before Ordering</h3>
+          <ul class="notice-list">
+            <li><strong>藝術風格：</strong>絨日致力於捕捉生物的萌動「意象」與手作的溫潤質感。我們透過藝術詮釋來表現神韻，而非標本般的精確擬真。</li>
+            <li><strong>色差提醒：</strong>羊毛素材在不同光線下及螢幕顯色皆可能有些微差異，請以實品為主。</li>
+            <li><strong>退換須知：</strong>每件作品皆為專屬訂製，正式開工前我們會與您再次確認細節，一旦製作開始即無法受理退款，還請見諒。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cta-container reveal-section">
+      <a href="https://lin.ee/s0l2IFG" target="_blank" rel="noopener noreferrer" class="btn-cta-line">立即諮詢</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" class="gallery-section reveal-section">
+  <div class="container">
+    <div>
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">典藏作品集</h2>
+      <div class="divider"></div>
+      <p class="gallery-hint">( 點擊圖片查看細節 )</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg','黃金鼠-探頭相框款')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg" alt="羊毛氈手作作品－黃金鼠-探頭相框款" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-探頭相框款</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg','黃金鼠-全身款-午後小憩')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-午後小憩" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-午後小憩</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg','黃金鼠-全身款-掌心溫度')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-掌心溫度" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-掌心溫度</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg','黃金鼠-全身款-塞滿嘴')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-塞滿嘴" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-塞滿嘴</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg','黃金鼠-全身款-坐姿睡態')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-坐姿睡態" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-坐姿睡態</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg','黃金鼠-全身款-站立')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-站立" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-站立</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg','黃金鼠-全身款-特殊植毛系列')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-特殊植毛系列" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-特殊植毛系列</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg','黃金角蛙')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg" alt="羊毛氈手作作品－黃金角蛙" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">黃金角蛙</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg','白文鳥')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg" alt="羊毛氈手作作品－白文鳥" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">白文鳥</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg','侏儒小倉')">
+        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg" alt="羊毛氈手作作品－侏儒小倉" loading="lazy" width="280" height="280">
+        <div class="gallery-overlay"><span class="gallery-label">侏儒小倉</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="關閉">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <span class="lightbox-caption" id="lightboxCaption"></span>
+</div>
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section contact-section reveal-section">
+    <div class="container contact-inner">
+        <h2 class="section-title">聯絡我們</h2>
+        <div class="divider"></div>
+        <p class="contact-desc">有任何訂製需求或疑問，歡迎透過以下任一管道與我們聯繫</p>
+        <div class="contact-channels">
+            <a href="https://lin.ee/s0l2IFG" target="_blank" rel="noopener noreferrer" class="channel-card line-card">
+                <div class="channel-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" style="width:20px;height:20px;filter:none;">
+                </div>
+                <div>
+                    <span class="channel-info-label">最快回覆</span>
+                    <span class="channel-info-name">LINE</span>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/rongri_handmade/" target="_blank" rel="noopener noreferrer" class="channel-card ig-card">
+                <div class="channel-icon" style="font-size:1.2rem;">📷</div>
+                <div>
+                    <span class="channel-info-label">作品更新</span>
+                    <span class="channel-info-name">Instagram</span>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61577161323314" target="_blank" rel="noopener noreferrer" class="channel-card fb-card">
+                <div class="channel-icon" style="font-size:1.2rem;">ƒ</div>
+                <div>
+                    <span class="channel-info-label">粉絲專頁</span>
+                    <span class="channel-info-name">Facebook</span>
+                </div>
+            </a>
+            <a href="https://www.threads.com/@rongri_handmade?hl=zh-tw" target="_blank" rel="noopener noreferrer" class="channel-card threads-card">
+                <div class="channel-icon" style="font-size:1.2rem;">@</div>
+                <div>
+                    <span class="channel-info-label">日常分享</span>
+                    <span class="channel-info-name">Threads</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="fade-in">
+    <div class="footer-bottom">
+        <p>© 2026 RongRi Handmade | 絨日 羊毛フェルト手作り</p>
+    </div>
+</footer>
+
+<button id="scrollTopBtn" title="回到頂端">TOP</button>
+
+<a href="https://lin.ee/s0l2IFG" target="_blank" rel="noopener noreferrer" id="float-line-btn" aria-label="LINE 線上諮詢">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
+</a>
+
+<!-- ═══ 倉鼠 ═══ -->
+<div id="hamster-pet-container">
+  <div id="pet-body">
+    <img id="pet-img" src="https://res.cloudinary.com/dkon1zhws/image/upload/hamster-normal.png" alt="倉鼠寵物">
+    <div id="pet-dialog">哈囉！</div>
+  </div>
+</div>
+
+<div id="paw-layer"></div>
+<div id="particle-layer"></div>
+<div id="dark-glow"></div>
+
+<div id="mood-card">
+  <div id="mood-color-circle"></div>
+  <div id="mood-title"></div>
+  <div id="mood-desc"></div>
+  <button id="mood-close-btn">收下今日顏色 ✨</button>
+</div>
+
+<div id="memory-photo">
+  <p id="memory-rat-caption"></p>
+  <div class="memory-frame">
+    <div class="memory-img-wrap">
+      <img id="memory-rat-img" src="" alt="我的鼠鼠">
+    </div>
+  </div>
+  <button id="memory-close-btn">我會好好珍藏的 🌟</button>
+</div>
+
+<style>
+@keyframes hPawFade   { 0%{opacity:.7} 100%{opacity:0} }
+@keyframes hHeartUp   { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(-60px) scale(.5);opacity:0} }
+@keyframes hSeedFall  { 0%{transform:translateY(0) rotate(0);opacity:1} 100%{transform:translateY(50px) rotate(180deg);opacity:0} }
+@keyframes hStarPop   { 0%{transform:scale(0);opacity:1} 100%{transform:scale(1.5);opacity:0} }
+@keyframes hDarkGlow  { 0%,100%{opacity:.7} 50%{opacity:1} }
+@keyframes memCaptionIn { 0%{opacity:0;transform:translateY(8px)} 100%{opacity:1;transform:translateY(0)} }
+@keyframes memFrameIn   { 0%{opacity:0;transform:scale(.92)} 100%{opacity:1;transform:scale(1)} }
+@keyframes memBtnIn     { 0%{opacity:0} 100%{opacity:1} }
+
+#paw-layer,#particle-layer {
+  position:fixed;top:0;left:0;width:100vw;height:100vh;
+  pointer-events:none;overflow:hidden;z-index:9990;
+}
+#particle-layer{z-index:9995}
+#dark-glow{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9996;transition:background .3s}
+#dark-glow.active{display:block;animation:hDarkGlow 2.5s ease-in-out infinite}
+#hamster-pet-container{position:fixed;z-index:9999;pointer-events:none;top:0;left:0;width:100vw;height:100vh}
+#pet-body{position:absolute;pointer-events:auto;cursor:grab;z-index:9999;user-select:none;-webkit-user-select:none}
+#pet-body.h-dragging{cursor:grabbing}
+#pet-img{width:80px;height:auto;display:block;transition:transform .2s ease;user-select:none;-webkit-user-drag:none;pointer-events:none}
+
+#pet-dialog {
+  position:absolute;
+  bottom:calc(100% + 6px);
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  border:1px solid #a68b7c;
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.6;
+  white-space:normal;
+  word-break:break-word;
+  max-width:160px;
+  min-width:80px;
+  text-align:center;
+  display:none;
+  box-shadow:2px 2px 6px rgba(0,0,0,.12);
+  font-family:'Noto Sans TC',sans-serif;
+  color:#4a4a4a;
+  z-index:10000;
+  pointer-events:none;
+}
+
+#mood-card{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:1.5px solid #a68b7c;border-radius:16px;padding:28px 36px;z-index:11000;text-align:center;font-family:'Noto Sans TC',sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.12);max-width:280px;width:90%}
+#mood-color-circle{width:60px;height:60px;border-radius:50%;margin:0 auto 16px;transition:background .5s}
+#mood-title{font-family:'Noto Serif TC',serif;font-size:1.1rem;color:#a68b7c;margin-bottom:8px}
+#mood-desc{font-size:.85rem;color:#8c8c8c;line-height:1.6;margin-bottom:16px}
+#mood-close-btn{border:1px solid #a68b7c;background:transparent;color:#a68b7c;padding:6px 22px;border-radius:50px;cursor:pointer;font-size:.85rem;font-family:'Noto Sans TC',sans-serif;transition:.3s}
+#mood-close-btn:hover{background:#a68b7c;color:#fff}
+
+#memory-photo{display:none;position:fixed;bottom:120px;right:30px;z-index:10500;text-align:center;width:200px}
+#memory-rat-caption{font-size:.95rem;color:#a68b7c;font-family:'Noto Serif TC',serif;line-height:1.7;margin:0 0 10px;letter-spacing:.05em;opacity:0}
+#memory-rat-caption.mem-caption-show{animation:memCaptionIn .7s ease forwards}
+.memory-frame{background:#fff;border:2px solid #a68b7c;border-radius:8px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,.15);opacity:0}
+.memory-frame.mem-frame-show{animation:memFrameIn .6s ease forwards}
+.memory-img-wrap{width:160px;height:160px;background:linear-gradient(135deg,#fdfaf5,#f0e8df);border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.memory-img-wrap img{width:100%;height:100%;object-fit:cover;opacity:.92;border-radius:4px}
+#memory-close-btn{margin-top:10px;border:none;background:#a68b7c;color:#fff;padding:5px 16px;border-radius:50px;cursor:pointer;font-size:.75rem;font-family:'Noto Sans TC',sans-serif;opacity:0;display:block;width:fit-content;margin-left:auto;margin-right:auto}
+#memory-close-btn.mem-btn-show{animation:memBtnIn .4s ease forwards}
+
+@media(max-width:600px){
+  #pet-img{width:60px}
+  #pet-dialog{font-size:11px;padding:4px 8px;max-width:140px}
+  #memory-photo{bottom:80px;right:15px;width:180px}
+  #memory-rat-caption{font-size:.85rem}
+  .memory-img-wrap{width:150px;height:150px}
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ─── Hero Carousel ───
+  (function(){
+    const track = document.getElementById('heroTrack');
+    const dots  = document.querySelectorAll('.hero-dot');
+    const total = dots.length;
+    let cur = 0, timer = null;
+
+    function goTo(n){
+      cur = (n + total) % total;
+      track.style.transform = `translateX(-${cur * 100}%)`;
+      dots.forEach((d,i) => d.classList.toggle('active', i === cur));
+    }
+    function next(){ goTo(cur + 1); }
+    function startAuto(){ timer = setInterval(next, 4500); }
+    function stopAuto(){ clearInterval(timer); }
+
+    dots.forEach(d => d.addEventListener('click', () => {
+      stopAuto(); goTo(+d.dataset.idx); startAuto();
+    }));
+
+    let tX = 0;
+    const hero = document.getElementById('heroCarousel');
+    hero.addEventListener('touchstart', e => { tX = e.touches[0].clientX; }, {passive:true});
+    hero.addEventListener('touchend',   e => {
+      const diff = tX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40){ stopAuto(); goTo(cur + (diff > 0 ? 1 : -1)); startAuto(); }
+    }, {passive:true});
+
+    startAuto();
+  })();
+
+  // ─── 捲動淡入 ───
+  const revealEls = document.querySelectorAll('.reveal-section');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+
+  // ─── 導覽列 ───
+  const mainNav    = document.querySelector('.main-nav');
+  const topBtn     = document.getElementById("scrollTopBtn");
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks   = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', function () {
+      const isActive = menuToggle.classList.toggle('is-active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('is-active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const sy = window.scrollY;
+    mainNav.classList.toggle('nav-scrolled', sy > 50);
+    if (topBtn) topBtn.style.display = sy > 300 ? "block" : "none";
+  }, { passive: true });
+
+  if (topBtn) topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // ─── 燈箱 ───
+  const lightbox        = document.getElementById('lightbox');
+  const lightboxImg     = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose   = document.getElementById('lightboxClose');
+
+  window.openLightbox = function (src, cap) {
+    lightboxImg.src = src;
+    lightboxCaption.textContent = cap;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeLightbox = () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; };
+  if (lightboxClose) lightboxClose.onclick = closeLightbox;
+  if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxCaption) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  let lbTouchStartY = 0;
+  if (lightbox) {
+    lightbox.addEventListener('touchstart', e => { lbTouchStartY = e.touches[0].clientY; }, { passive: true });
+    lightbox.addEventListener('touchend', e => { if (e.changedTouches[0].clientY - lbTouchStartY > 60) closeLightbox(); }, { passive: true });
+  }
+
+  // ════════════════════════════════════════════
+  //   倉鼠小遊戲（含手機版自動漫步修正）
+  // ════════════════════════════════════════════
+  ;(function () {
+
+    const petBody   = document.getElementById('pet-body');
+    const petImg    = document.getElementById('pet-img');
+    const dlg       = document.getElementById('pet-dialog');
+    const pawLayer  = document.getElementById('paw-layer');
+    const pLayer    = document.getElementById('particle-layer');
+    const darkGlow  = document.getElementById('dark-glow');
+    const moodCard  = document.getElementById('mood-card');
+    const moodCircle= document.getElementById('mood-color-circle');
+    const moodTitle = document.getElementById('mood-title');
+    const moodDesc  = document.getElementById('mood-desc');
+    const moodClose = document.getElementById('mood-close-btn');
+    const memPhoto  = document.getElementById('memory-photo');
+    const memClose  = document.getElementById('memory-close-btn');
+
+    function safeGetStorage(k) { try { return localStorage.getItem(k); } catch(e) { return null; } }
+    function safeSetStorage(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
+
+    const B = "https://res.cloudinary.com/dkon1zhws/image/upload/";
+    const SK = {
+      normal:B+"hamster-normal.png", happy:B+"hamster-happy.png", angry:B+"hamster-angry.png",
+      cry:B+"hamster-cry.png", shy:B+"hamster-shy.png", sleepy:B+"hamster-sleepy.png",
+      curious:B+"hamster-curious.png", surprised:B+"hamster-surprised.png", bored:B+"hamster-bored.png",
+      excited:B+"hamster-excited.png", smile:B+"hamster-smile.png", tired:B+"hamster-tired.png",
+      happySeed:B+"hamster-happy-seed.png", hungryDrool:B+"hamster-hungry-drool.png",
+      angryFist:B+"hamster-angry-fist.png", thinking:B+"hamster-thinking.png",
+      boredTable:B+"hamster-bored-table.png", sleepingZzz:B+"hamster-sleeping-zzz.png",
+      sickFever:B+"hamster-sick-fever.png", loveEyes:B+"hamster-love-eyes.png",
+      fullCheeks:B+"hamster-full-cheeks.png", liftedScared:B+"hamster-lifted-scared.png",
+      liftedDumb:B+"hamster-lifted-dumb.png", guitarPlay:B+"hamster-guitar-play.png",
+      painter:B+"hamster-painter.png", flagWave:B+"hamster-flag-wave.png",
+      hugeSeed:B+"hamster-huge-seed.png", studying:B+"hamster-studying.png",
+      cooking:B+"hamster-cooking.png", pillarPeek:B+"hamster-pillar-peek.png",
+      gardening:B+"hamster-gardening.png", toyCar:B+"hamster-toy-car.png",
+      sofaRelax:B+"hamster-sofa-relax.png", vroomRun:B+"hamster-vroom-run.png",
+      wind:B+"hamster-wind.png", christmas:B+"hamster-christmas.png",
+      midnight:B+"hamster-midnight.png", nightLamp:B+"hamster-night-lamp.png",
+      peek:B+"hamster-peek.png", sleeping:B+"hamster-sleeping.png",
+    };
+    ['normal','happy','smile','sleepy','loveEyes','liftedScared','liftedDumb','vroomRun'].forEach(k => {
+      const i = new Image(); i.src = SK[k];
+    });
+    function setSkin(k) { petImg.src = SK[k] || SK.normal; }
+
+    const isMobile = window.innerWidth <= 600;
+    // ★ 手機版：初始位置設為畫面中央，而非右下角
+    let cx = isMobile ? window.innerWidth * 0.5 : window.innerWidth / 2;
+    let cy = isMobile ? window.innerHeight * 0.5 : window.innerHeight * 0.7;
+    let tx = cx, ty = cy;
+    let isWalking=false, isDragging=false, isSleeping=false, isBusy=false;
+    let isScheduled=false, isWindBlown=false, isFleeing=false, vroomActive=false;
+    let isDarkMode=false, isNightTime=false;
+    let clickCount=0;
+    let sleepTimer=null, dlgTimer=null, animFrame=null, behaviorTimer=null, clickCoolTimer=null;
+    let lastScrollY=window.scrollY, scrollThrottle=false;
+    let pawCount=0, lastPawX=-999, lastPawY=-999;
+    let hasShownMemory=false, todayMoodShown=false;
+    let stepCount=0, isCursorNear=false;
+    let longPressTimer=null, longPressActive=false;
+    let dragVx=0, dragVy=0, dragOffX=0, dragOffY=0, lastDragX=0, lastDragY=0, lastDragTime=0;
+    let lastClickT=0, pendingClickTimer=null;
+    let dlgShowTime=0;
+
+    // ★ 手機版自動漫步計時器
+    let mobileWalkTimer = null;
+
+    function rnd(n) { return Math.random() * n; }
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(v, hi)); }
+    function getBounds() {
+      const sz = window.innerWidth <= 600 ? 60 : 80;
+      return { minX:10, minY:70, maxX:window.innerWidth-sz-10, maxY:window.innerHeight-sz-10 };
+    }
+
+    moodClose.onclick = () => { moodCard.style.display='none'; document.body.style.overflow=''; isBusy=false; schedNext(3000); };
+    memClose.onclick  = () => { memPhoto.style.display='none'; isBusy=false; schedNext(4000); };
+
+    function showDlg(text, dur=6500) {
+      const now = Date.now();
+      if (dlgShowTime && now - dlgShowTime < 3000 && dlg.textContent === text) return;
+      if (dlgTimer) clearTimeout(dlgTimer);
+      dlg.textContent = text;
+      dlg.style.display = "block";
+      dlg.style.left = '50%';
+      dlg.style.right = 'auto';
+      dlg.style.transform = 'translateX(-50%)';
+      dlgShowTime = now;
+      if (cy < 120) {
+        dlg.style.bottom = 'auto';
+        dlg.style.top = 'calc(100% + 6px)';
+      } else {
+        dlg.style.bottom = 'calc(100% + 6px)';
+        dlg.style.top = 'auto';
+      }
+      requestAnimationFrame(() => {
+        const rect = dlg.getBoundingClientRect();
+        if (rect.right > window.innerWidth - 8) {
+          dlg.style.left = 'auto'; dlg.style.right = '0'; dlg.style.transform = 'none';
+        } else if (rect.left < 8) {
+          dlg.style.left = '0'; dlg.style.right = 'auto'; dlg.style.transform = 'none';
+        }
+      });
+      dlgTimer = setTimeout(() => { dlg.style.display="none"; dlgShowTime=0; }, dur);
+    }
+
+    function applyDarkMode(dark) {
+      isDarkMode = dark;
+      if (dark) {
+        darkGlow.classList.add('active');
+        setTimeout(()=>{ if(isDarkMode) showDlg("好暗喔...我來當小燈籠 🔦",3000); },4000);
+      } else {
+        darkGlow.classList.remove('active');
+      }
+    }
+    applyDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => applyDarkMode(e.matches));
+
+    function updateGlow() {
+      if (!isDarkMode) return;
+      const sz = window.innerWidth<=600 ? 30 : 40;
+      darkGlow.style.background = `radial-gradient(circle 130px at ${cx+sz}px ${cy+sz}px, rgba(255,220,100,.13) 0%, transparent 70%)`;
+    }
+
+    function spawnPaw(x, y) {
+      if (Math.hypot(x-lastPawX, y-lastPawY) < 28) return;
+      lastPawX=x; lastPawY=y;
+      const onGallery = !!document.elementFromPoint(cx+40,cy+40)?.closest('#gallery');
+      const el = document.createElement('div');
+      el.style.cssText = `position:absolute;left:${x}px;top:${y}px;font-size:${onGallery?14:11}px;
+        color:${onGallery?'#c9a84c':'#c4a99a'};pointer-events:none;
+        text-shadow:${onGallery?'0 0 6px rgba(201,168,76,.5)':'none'};
+        transform:rotate(${pawCount%2===0?12:-12}deg) scaleX(${pawCount%2===0?1:-1});
+        animation:hPawFade 4s ease forwards;`;
+      el.textContent='🐾';
+      pawLayer.appendChild(el);
+      pawCount++;
+      setTimeout(()=>el.remove(),4100);
+    }
+
+    function spawnParticles(x, y, type='heart', n=5) {
+      const cfg = {
+        heart:{chars:['❤️','💕','💖'],anim:'hHeartUp',dur:800},
+        seed: {chars:['🌰','·','•'],  anim:'hSeedFall',dur:600},
+        star: {chars:['⭐','✨','★'], anim:'hStarPop', dur:700},
+      }[type]||{chars:['❤️'],anim:'hHeartUp',dur:800};
+      for (let i=0;i<n;i++) {
+        const p=document.createElement('div');
+        const a=rnd(360), d=20+rnd(40);
+        p.style.cssText=`position:absolute;left:${x+Math.cos(a)*d}px;top:${y+Math.sin(a)*d}px;
+          font-size:${10+rnd(8)}px;pointer-events:none;
+          animation:${cfg.anim} ${cfg.dur+rnd(300)}ms ease forwards;
+          animation-delay:${i*60}ms;`;
+        p.textContent=cfg.chars[Math.floor(rnd(cfg.chars.length))];
+        pLayer.appendChild(p);
+        setTimeout(()=>p.remove(),cfg.dur+600);
+      }
+    }
+
+    function triggerDoubleClick() {
+      if (isDragging||vroomActive) return;
+      setSkin('excited');
+      showDlg("哇！好刺激！✨",2000);
+      spawnParticles(cx+20,cy,'star',8);
+      spawnParticles(cx+20,cy,'heart',5);
+      petImg.style.transition='transform 0s';
+      let deg=0;
+      const spinInterval=setInterval(()=>{
+        deg+=30; petImg.style.transform=`rotate(${deg}deg)`;
+        if (deg>=360) {
+          clearInterval(spinInterval);
+          petImg.style.transform='';
+          petImg.style.transition='transform .2s ease';
+          setTimeout(()=>{ if(!isWalking&&!isDragging) setSkin('normal'); },500);
+        }
+      },40);
+    }
+
+    const MOODS=[
+      {name:'溫暖杏桃色',color:'#FFBE98',desc:'適合戳一隻開心的柴犬，今天充滿療癒能量！'},
+      {name:'薰衣草紫',  color:'#C8A8D8',desc:'輕柔而夢幻，適合製作一隻靜靜趴著的貓咪。'},
+      {name:'奶油米白',  color:'#F5E6C8',desc:'溫潤如陽光，是創作的絕佳狀態。'},
+      {name:'薄荷綠',    color:'#A8D8B0',desc:'清爽有活力，今天的手速肯定超快！'},
+      {name:'玫瑰粉',    color:'#F0A0B0',desc:'充滿愛意，適合做給最重要的誰。'},
+      {name:'天空藍',    color:'#98C8E8',desc:'心情平靜開闊，戳出來的毛色一定很美。'},
+      {name:'蜂蜜黃',    color:'#F8D878',desc:'甜甜的一天，記得補充能量再創作喔！'},
+    ];
+    function showMood() {
+      if (todayMoodShown) return;
+      todayMoodShown=true; isBusy=true;
+      safeSetStorage('rongri_mood_date', new Date().toDateString());
+      const seed=new Date().getDate()+new Date().getMonth()*31;
+      const m=MOODS[seed%MOODS.length];
+      moodCircle.style.background=m.color;
+      moodTitle.textContent=`今日顏色：${m.name}`;
+      moodDesc.textContent=m.desc;
+      moodCard.style.display='block';
+      document.body.style.overflow='hidden';
+      setSkin('happySeed');
+      showDlg(`今天是「${m.name}」的日子 🎨`,4000);
+    }
+
+    const Q="q_auto:best,f_auto/";
+    const RAT_PHOTOS=[
+      {src:B+Q+"memory-rat-01.jpg",caption:"牠說，在吱吱星球有好多瓜子 🌟"},
+      {src:B+Q+"memory-rat-02.jpg",caption:"牠現在一定曬著太陽睡午覺 ☀️"},
+      {src:B+Q+"memory-rat-03.jpg",caption:"這個角落，牠最喜歡了 🌿"},
+      {src:B+Q+"memory-rat-04.jpg",caption:"小小的身體，大大的存在 💛"},
+      {src:B+Q+"memory-rat-05.jpg",caption:"牠說牠記得你的味道 ✨"},
+      {src:B+Q+"memory-rat-06.jpg",caption:"在吱吱星球，牠靜靜地陪著你 🌙"},
+      {src:B+Q+"memory-rat-07.jpg",caption:"牠有沒有跟你說，牠在那邊吃得很好 🌰"},
+      {src:B+Q+"memory-rat-08.jpg",caption:"那個瞬間，我們都記得 💕"},
+      {src:B+Q+"memory-rat-09.jpg",caption:"在某個地方，過得很快樂 🌈"},
+      {src:B+Q+"memory-rat-10.jpg",caption:"牠說，謝謝你一直愛牠 🐾"},
+    ];
+    (function(){ RAT_PHOTOS.forEach(p=>{ const i=new Image(); i.src=p.src; }); })();
+
+    function triggerMemory() {
+      if (hasShownMemory||isBusy) return;
+      hasShownMemory=true; isBusy=true;
+      const pick=RAT_PHOTOS[Math.floor(rnd(RAT_PHOTOS.length))];
+      const imgEl=document.getElementById('memory-rat-img');
+      const capEl=document.getElementById('memory-rat-caption');
+      const memFrame=memPhoto.querySelector('.memory-frame');
+      const memBtn=document.getElementById('memory-close-btn');
+      stopWalk();
+      setSkin('flagWave');
+      showDlg("等等！我有東西要給你 📬",5000);
+      if (capEl) { capEl.innerHTML=pick.caption; capEl.classList.remove('mem-caption-show'); void capEl.offsetWidth; }
+      if (memFrame) { memFrame.classList.remove('mem-frame-show'); void memFrame.offsetWidth; }
+      if (memBtn)   { memBtn.classList.remove('mem-btn-show');     void memBtn.offsetWidth;   }
+      function showMemoryPanel() {
+        memPhoto.style.display='block';
+        requestAnimationFrame(()=>{ if(capEl) capEl.classList.add('mem-caption-show'); });
+        setTimeout(()=>{ if(memFrame) memFrame.classList.add('mem-frame-show'); },1200);
+        setTimeout(()=>{ if(memBtn)   memBtn.classList.add('mem-btn-show');     },2000);
+      }
+      const preload=new Image();
+      preload.onload=()=>{ if(imgEl){ imgEl.style.display='block'; imgEl.src=pick.src; } };
+      preload.onerror=()=>{ if(imgEl){ imgEl.style.display='none'; } };
+      preload.src=pick.src;
+      setTimeout(()=>{
+        setSkin('happySeed');
+        showDlg("這是我的朋友 💌 牠在吱吱星球過得很快樂，要我帶這張照片給你",9000);
+        showMemoryPanel();
+      },5500);
+    }
+
+    setTimeout(()=>{
+      if (isBusy) {
+        const waitBusy=setInterval(()=>{ if(!isBusy){ clearInterval(waitBusy); triggerMemory(); } },2000);
+      } else {
+        triggerMemory();
+      }
+    },60000);
+
+    setTimeout(()=>{
+      if (!hasShownMemory&&!isSleeping&&!isDragging) {
+        setSkin('loveEyes');
+        showDlg("你已經在這裡待了一會兒了～要去看看作品集嗎？🖼️",5000);
+        spawnParticles(cx+20,cy,'heart',4);
+      }
+    },180000);
+
+    function stopWalk() { isWalking=false; if(animFrame){ cancelAnimationFrame(animFrame); animFrame=null; } }
+
+    function walkTo(destX, destY, fast=false) {
+      stopWalk();
+      if (sleepTimer) clearTimeout(sleepTimer);
+      isSleeping=false; isWalking=true; stepCount=0;
+      tx=destX; ty=destY;
+      const spd=fast?1.6:(window.innerWidth<=600?0.65:0.9);
+      const dist=Math.hypot(tx-cx,ty-cy);
+      if (dist>280&&!isWindBlown) setSkin('vroomRun');
+      function step() {
+        if (!isWalking||isDragging) return;
+        const dx=tx-cx, dy=ty-cy, d=Math.hypot(dx,dy);
+        if (d>4) {
+          cx+=(dx/d)*spd+(rnd(1.2)-.6); cy+=(dy/d)*spd;
+          const b=getBounds(); cx=clamp(cx,b.minX,b.maxX); cy=clamp(cy,b.minY,b.maxY);
+          stepCount++;
+          const bob=Math.sin(stepCount*.25)*2;
+          petBody.style.left=cx+'px'; petBody.style.top=(cy+bob)+'px';
+          petImg.style.transform=dx>0?"scaleX(-1)":"scaleX(1)";
+          if(stepCount%22===0) spawnPaw(cx+20,cy+58);
+          if(stepCount%80===0) checkSectionDlg();
+          updateGlow();
+          animFrame=requestAnimationFrame(step);
+        } else {
+          isWalking=false; isFleeing=false;
+          const r=rnd(1);
+          if(!isWindBlown){ if(r>.75) setSkin('boredTable'); else if(r>.5) setSkin('tired'); else setSkin('normal'); }
+          resetSleepTimer();
+          // ★ 手機版：走完一段路後，排程下一次自動漫步
+          if(isMobile) scheduleMobileWalk();
+        }
+      }
+      animFrame=requestAnimationFrame(step);
+    }
+
+    // ★ 手機版自動漫步：每隔 3~7 秒隨機走一段路
+    function scheduleMobileWalk() {
+      if(!isMobile) return;
+      if(mobileWalkTimer) clearTimeout(mobileWalkTimer);
+      mobileWalkTimer = setTimeout(()=>{
+        if(!isDragging&&!isSleeping&&!isBusy&&!vroomActive) {
+          randomWalk(false);
+        } else {
+          scheduleMobileWalk();
+        }
+      }, 3000 + rnd(4000));
+    }
+
+    function randomWalk(far=false) {
+      if(isDragging||isSleeping) return;
+      const b=getBounds(), rng=far?500:300;
+      walkTo(clamp(cx+(rnd(rng*2)-rng),b.minX,b.maxX),clamp(cy+(rnd(rng*2)-rng),b.minY,b.maxY),far);
+    }
+
+    function resetSleepTimer() {
+      if(sleepTimer) clearTimeout(sleepTimer);
+      sleepTimer=setTimeout(()=>{
+        if(!isWalking&&!isDragging){
+          setSkin('boredTable'); showDlg("好無聊喔... 🥱",3000);
+          sleepTimer=setTimeout(()=>{
+            if(!isWalking&&!isDragging){
+              isSleeping=true; setSkin('sleepingZzz'); showDlg("zzZZ... 🌙",8000);
+              spawnParticles(cx+20,cy,'star',3);
+            }
+          },45000);
+        }
+      },15000);
+    }
+
+    function checkSectionDlg() {
+      if(rnd(1)<.65) return;
+      const el=document.elementFromPoint(cx+40,cy+40);
+      if(!el) return;
+      const sec=el.closest('section');
+      if(!sec) return;
+      const map={
+        process:['訂製流程在這邊喔！💌','要幫誰做一隻呢？🧶'],
+        gallery:['哇！好漂亮喔 ✨','這些都是夥伴的作品！🖼️'],
+        about:  ['這是絨日的故事～ 🐑','每一針都是愛 💕'],
+        contact:['快去找老闆聊聊！📬'],
+      };
+      const lines=map[sec.id]; if(lines) showDlg(lines[Math.floor(rnd(lines.length))],4500);
+    }
+
+    const nowH=new Date().getHours(), nowD=new Date().getDay();
+    const nowM=new Date().getMonth(), nowDate=new Date().getDate();
+    isNightTime=nowH>=21||nowH<6;
+    const isWeekend=nowD===0||nowD===6;
+    const isChristmas=nowM===11&&nowDate>=20;
+    const isMeiYu=nowM===4||nowM===5;
+    const isSummer=nowM>=6&&nowM<=8;
+    const isAutumn=nowM===9||nowM===10;
+    const isWinter=(nowM===11||nowM===0||nowM===1)&&!isChristmas;
+
+    const seasonBehaviors=[];
+    if(isMeiYu) seasonBehaviors.push(
+      {w:8,fn:()=>{ setSkin('wind');      showDlg("好濕喔...羊毛都要發霉了 🌧️",3500); schedNext(4500); }},
+      {w:5,fn:()=>{ setSkin('sickFever'); showDlg("梅雨季好難熬...快點放晴 ☁️",3500); schedNext(4500); }}
+    );
+    if(isSummer) seasonBehaviors.push(
+      {w:8,fn:()=>{ setSkin('hungryDrool'); showDlg("好熱喔！！有沒有冰西瓜 🍉",3500); schedNext(4500); }},
+      {w:5,fn:()=>{ setSkin('tired');       showDlg("台南的夏天真的太猛了 ☀️🔥",3000); schedNext(4000); }}
+    );
+    if(isAutumn) seasonBehaviors.push(
+      {w:8,fn:()=>{ setSkin('happySeed'); showDlg("秋天到了！瓜子特別香 🌰✨",3000); spawnParticles(cx+20,cy,'seed',5); schedNext(4000); }},
+      {w:5,fn:()=>{ setSkin('gardening'); showDlg("好適合出門的天氣～ 🍂",3000); schedNext(4000); }}
+    );
+    if(isWinter) seasonBehaviors.push(
+      {w:8,fn:()=>{ setSkin('sofaRelax'); showDlg("冬天嘛...就是要窩著 🧣",3500); schedNext(4500); }},
+      {w:5,fn:()=>{ setSkin('sleepy');    showDlg("冷冷的...好想睡覺 💤",3000); schedNext(4000); }}
+    );
+
+    const behaviors=[
+      {w:20,fn:()=>{ setSkin('normal');      randomWalk(false); schedNext(5000+rnd(3000)); }},
+      {w:12,fn:()=>{ setSkin('curious');     randomWalk(false); schedNext(6000+rnd(3000)); }},
+      {w:10,fn:()=>{ setSkin('excited');     showDlg("跑起來啦！🏃",1800); randomWalk(true); schedNext(5000+rnd(2000)); }},
+      {w:6, fn:()=>{ setSkin('hungryDrool');showDlg("老闆...今天有瓜子嗎？😋",3500); schedNext(4500); }},
+      {w:7, fn:()=>{ setSkin('thinking');   showDlg("姆...空氣中有羊毛的味道 🧶",3500); schedNext(4500); }},
+      {w:7, fn:()=>{ setSkin('happySeed');  showDlg("嘻嘻，有瓜子吃！🌰",3000); spawnParticles(cx+20,cy,'star',4); schedNext(4000); }},
+      {w:7, fn:()=>{ if(!isWalking){ setSkin('shy'); showDlg("洗個臉 ✨",1500); setTimeout(()=>{ if(!isWalking) setSkin('normal'); },2000); } schedNext(3000); }},
+      {w:6, fn:()=>{ setSkin('shy');        showDlg("欸...你在看我嗎 >///<",3000); schedNext(4000); }},
+      {w:6, fn:()=>{ setSkin('tired');      showDlg("好累喔...休息一下 😪",4000); schedNext(5000); }},
+      {w:5, fn:()=>{ if(!isWalking){ setSkin('boredTable'); showDlg("無聊～有人想聊天嗎？🥱",3000); } schedNext(4000); }},
+      {w:5, fn:()=>{ setSkin('smile');      showDlg("你好！歡迎來到絨日！😊",3500); schedNext(4500); }},
+      {w:3, fn:()=>{ setSkin('guitarPlay'); showDlg("♪ La la la～ 🎸",3500); schedNext(4500); }},
+      {w:3, fn:()=>{ setSkin('painter');    showDlg("今天的靈感是...羊毛！🎨",3500); schedNext(4500); }},
+      {w:3, fn:()=>{ setSkin('studying');   showDlg("複習一下擬真技巧 📚",3500); schedNext(4500); }},
+      {w:3, fn:()=>{ setSkin('cooking');    showDlg("今晚吃什麼呢？🍳",3500); schedNext(4500); }},
+      {w:3, fn:()=>{ setSkin('gardening');  showDlg("種一朵羊毛花！🌱",3500); schedNext(4500); }},
+      {w:2, fn:()=>{ setSkin('hugeSeed');   showDlg("這顆瓜子...是我的！不給！🌰",4000); schedNext(5000); }},
+      {w:4, fn:()=>{ setSkin('flagWave');   showDlg("老闆說這個月還有空檔喔！要快 📅",4500); schedNext(5500); }},
+      {w:4, fn:()=>{ setSkin('loveEyes');   showDlg("上週剛完成一隻，超可愛的 😍 你也要嗎？",4500); spawnParticles(cx+20,cy,'heart',4); schedNext(5500); }},
+      {w:3, fn:()=>{ setSkin('thinking');   showDlg("最近好多人來問訂製...手速要加快了 🧶",4500); schedNext(5500); }},
+      {w:3, fn:()=>{ setSkin('smile');      showDlg("客製化只接少量喔，想要的要趁早 🌸",4500); schedNext(5500); }},
+      {w:4, fn:()=>{ setSkin('peek');       showDlg("偷偷看一下...有沒有人在？👀",3500); schedNext(4500); }},
+      ...seasonBehaviors,
+      ...(isWeekend?[{w:8,fn:()=>{ setSkin('sofaRelax'); showDlg("週末嘛，躺平一下 🛋️",4000); schedNext(5000); }}]:[]),
+      ...(isNightTime?[
+        {w:10,fn:()=>{ setSkin('sleepy');   showDlg("好晚了...打個盹兒 🌙",3500); resetSleepTimer(); schedNext(4500); }},
+        {w:8, fn:()=>{ setSkin('midnight'); showDlg("深夜了還在逛...你也睡不著嗎？🌙",4500); schedNext(5500); }},
+        {w:6, fn:()=>{ setSkin('nightLamp');showDlg("我來當你的小夜燈 🔦",4500); schedNext(5500); }},
+        {w:5, fn:()=>{ setSkin('sleeping'); showDlg("zzZZ...（假裝睡著）",4500); schedNext(5500); }},
+      ]:[]),
+      ...(isChristmas?[{w:12,fn:()=>{ setSkin('christmas'); showDlg("Ho Ho Ho！聖誕快樂 🎄 幫毛孩訂一隻當禮物吧！",5500); spawnParticles(cx+20,cy,'star',6); schedNext(6500); }}]:[]),
+    ];
+
+    function pickBehavior() {
+      const tot=behaviors.reduce((s,b)=>s+b.w,0); let r=rnd(tot);
+      for(const b of behaviors){ r-=b.w; if(r<=0) return b; } return behaviors[0];
+    }
+
+    function schedNext(delay) {
+      if(isScheduled) return;
+      isScheduled=true;
+      behaviorTimer=setTimeout(()=>{
+        isScheduled=false;
+        if(isBusy){ schedNext(5000); return; }
+        if(!isSleeping&&!isDragging&&!isWindBlown) pickBehavior().fn();
+        else schedNext(4000);
+      },delay);
+    }
+
+    let galleryTriggered=false;
+    const gallerySection=document.getElementById('gallery');
+    if(gallerySection&&'IntersectionObserver' in window){
+      const galleryObs=new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting&&!galleryTriggered&&!isDragging&&!isSleeping){
+            galleryTriggered=true;
+            const targetX=clamp(window.innerWidth*.5,60,window.innerWidth-100);
+            setSkin('excited');
+            showDlg("等等！我去看一下作品！🏃",2000);
+            setTimeout(()=>{
+              walkTo(targetX,clamp(window.innerHeight*.5,80,window.innerHeight-100),true);
+              setTimeout(()=>{
+                if(!isWalking&&!isDragging){
+                  setSkin('painter'); showDlg("這些都是夥伴做的！好厲害 🎨",5000);
+                  setTimeout(()=>{
+                    if(!isWalking&&!isDragging){
+                      setSkin('loveEyes'); showDlg("你也想幫你的毛孩訂一隻嗎？💕",6000);
+                      spawnParticles(cx+20,cy,'heart',5);
+                    }
+                  },4000);
+                }
+              },3000);
+            },2200);
+            setTimeout(()=>{ galleryTriggered=false; },30000);
+          }
+        });
+      },{threshold:0.3});
+      galleryObs.observe(gallerySection);
+    }
+
+    function triggerToyCar() {
+      if(vroomActive||isDragging) return;
+      vroomActive=true;
+      const savedX=cx, savedY=cy;
+      const b=getBounds();
+      const carY=b.minY+rnd(b.maxY-b.minY);
+      stopWalk(); cx=-100; cy=carY;
+      petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+      setSkin('toyCar'); petImg.style.transform="scaleX(-1)";
+      showDlg("嗖！！ 🏎️",2000);
+      const endX=window.innerWidth+120;
+      let carX=-100;
+      function carStep(){
+        carX+=5; cx=carX; cy=carY;
+        petBody.style.left=carX+'px'; petBody.style.top=carY+'px';
+        updateGlow();
+        if(carX<endX) requestAnimationFrame(carStep);
+        else{ cx=savedX; cy=savedY; petBody.style.left=cx+'px'; petBody.style.top=cy+'px'; setSkin('normal'); petImg.style.transform="scaleX(1)"; vroomActive=false; schedNext(3000); }
+      }
+      requestAnimationFrame(carStep);
+    }
+    setInterval(()=>{ if(rnd(1)>.5) triggerToyCar(); },90000+rnd(60000));
+
+    let windTimer=null;
+    window.addEventListener('scroll',()=>{
+      if(scrollThrottle) return; scrollThrottle=true;
+      requestAnimationFrame(()=>{
+        const vel=Math.abs(window.scrollY-lastScrollY);
+        lastScrollY=window.scrollY; scrollThrottle=false;
+        if(vel>60&&!isWindBlown&&!isDragging){
+          isWindBlown=true; setSkin('wind'); showDlg("喔喔喔！風好大！🌬️",2000);
+          if(windTimer) clearTimeout(windTimer);
+          windTimer=setTimeout(()=>{ isWindBlown=false; if(!isWalking&&!isSleeping) setSkin('normal'); },2500);
+        }
+        // ★ 手機版：滾動時也觸發位置更新（讓倉鼠跟著畫面感覺移動）
+        if(isMobile&&!isDragging&&!isWalking) {
+          updateGlow();
+        }
+      });
+    },{passive:true});
+
+    // ★ 電腦版：滑鼠接近時逃跑
+    document.addEventListener('mousemove',e=>{
+      const dist=Math.hypot(e.clientX-cx,e.clientY-cy);
+      if(dist<80&&!isDragging&&!isSleeping&&!isWindBlown&&!isCursorNear){
+        isCursorNear=true;
+        if(rnd(1)>.35){
+          setSkin('pillarPeek'); showDlg("欸...不要靠那麼近啦 >///<",2000);
+          isFleeing=true;
+          const ang=Math.atan2(cy-e.clientY,cx-e.clientX), fl=120+rnd(80);
+          const b=getBounds();
+          walkTo(clamp(cx+Math.cos(ang)*fl,b.minX,b.maxX),clamp(cy+Math.sin(ang)*fl,b.minY,b.maxY),true);
+        }
+      } else if(dist>130){ isCursorNear=false; isFleeing=false; }
+    },{passive:true});
+
+    function startDrag(cX,cY){
+      isDragging=true; isWalking=false; isSleeping=false;
+      stopWalk();
+      if(sleepTimer) clearTimeout(sleepTimer);
+      if(mobileWalkTimer) clearTimeout(mobileWalkTimer);
+      dragOffX=cX-cx; dragOffY=cY-cy;
+      lastDragX=cX; lastDragY=cY; lastDragTime=Date.now();
+      dragVx=0; dragVy=0;
+      petBody.classList.add('h-dragging');
+      setSkin('liftedScared'); spawnParticles(cx+20,cy,'seed',4); showDlg("欸！？誰在抓我！😲",1500);
+      setTimeout(()=>{ if(isDragging){ setSkin('liftedDumb'); showDlg("好...好吧... 😑",2000); } },600);
+      longPressActive=false;
+      longPressTimer=setTimeout(()=>{ if(isDragging){ longPressActive=true; setSkin('angryFist'); showDlg("放開我！！😤💢",2000); } },3000);
+    }
+    function moveDrag(cX,cY){
+      if(!isDragging) return;
+      const now=Date.now(), dt=Math.max(1,now-lastDragTime);
+      dragVx=(cX-lastDragX)/dt*16; dragVy=(cY-lastDragY)/dt*16;
+      lastDragX=cX; lastDragY=cY; lastDragTime=now;
+      const b=getBounds();
+      cx=clamp(cX-dragOffX,b.minX,b.maxX); cy=clamp(cY-dragOffY,b.minY,b.maxY);
+      petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+      updateGlow();
+      const el=document.elementFromPoint(cX,cY);
+      if(el&&(el.classList.contains('nav-logo')||el.classList.contains('logo-large'))) showDlg("這是我老闆！😲",2000);
+    }
+    function endDrag(){
+      if(!isDragging) return;
+      isDragging=false; petBody.classList.remove('h-dragging');
+      if(longPressTimer) clearTimeout(longPressTimer);
+      if(longPressActive){
+        longPressActive=false; setSkin('vroomRun'); showDlg("終於自由了！💨",2000);
+        randomWalk(true); schedNext(5000); return;
+      }
+      let ivx=dragVx*.9, ivy=dragVy*.9;
+      setSkin('surprised');
+      function inertia(){
+        if(Math.abs(ivx)<.3&&Math.abs(ivy)<.3){ landBounce(); return; }
+        const b=getBounds(); cx+=ivx; cy+=ivy;
+        if(cx<=b.minX||cx>=b.maxX){ ivx*=-.55; cx=clamp(cx,b.minX,b.maxX); showDlg("撞牆了！😵",700); }
+        if(cy<=b.minY||cy>=b.maxY){ ivy*=-.55; cy=clamp(cy,b.minY,b.maxY); }
+        ivx*=.88; ivy*=.88;
+        petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+        updateGlow(); requestAnimationFrame(inertia);
+      }
+      requestAnimationFrame(inertia);
+    }
+    function landBounce(){
+      setSkin('normal'); showDlg("咚！落地了 ✨",1500); spawnParticles(cx+20,cy+40,'star',3);
+      let bc=0;
+      function bounce(){
+        bc++;
+        const off=Math.sin(bc*.8)*10*Math.exp(-bc*.15);
+        petBody.style.top=(cy-Math.abs(off))+'px';
+        if(bc<20) requestAnimationFrame(bounce);
+        else{
+          petBody.style.top=cy+'px';
+          resetSleepTimer();
+          schedNext(3000);
+          // ★ 手機版：落地後也啟動自動漫步
+          if(isMobile) scheduleMobileWalk();
+        }
+      }
+      requestAnimationFrame(bounce);
+    }
+
+    petBody.addEventListener('mousedown',e=>{ e.preventDefault(); startDrag(e.clientX,e.clientY); });
+    document.addEventListener('mousemove',e=>{ if(isDragging) moveDrag(e.clientX,e.clientY); });
+    document.addEventListener('mouseup',()=>{ if(isDragging) endDrag(); });
+    petBody.addEventListener('touchstart',e=>{ e.preventDefault(); startDrag(e.touches[0].clientX,e.touches[0].clientY); },{passive:false});
+    document.addEventListener('touchmove',e=>{ if(!isDragging) return; e.preventDefault(); moveDrag(e.touches[0].clientX,e.touches[0].clientY); },{passive:false});
+    document.addEventListener('touchend',()=>{ if(isDragging) endDrag(); });
+
+    petBody.addEventListener('click',e=>{
+      if(isDragging) return;
+      const now=Date.now();
+      if(now-lastClickT<300){
+        if(pendingClickTimer){ clearTimeout(pendingClickTimer); pendingClickTimer=null; }
+        lastClickT=0; triggerDoubleClick(); return;
+      }
+      lastClickT=now;
+      pendingClickTimer=setTimeout(()=>{
+        pendingClickTimer=null;
+        clickCount++;
+        if(isSleeping){
+          isSleeping=false; if(sleepTimer) clearTimeout(sleepTimer);
+          setSkin('surprised'); showDlg("欸！？誰叫我起來！😲",2000);
+          spawnParticles(cx+20,cy,'star',3);
+          setTimeout(()=>{ setSkin('normal'); resetSleepTimer(); },2500); return;
+        }
+        const today=new Date().toDateString();
+        if(!todayMoodShown&&safeGetStorage('rongri_mood_date')!==today){ showMood(); return; }
+        if(clickCoolTimer) clearTimeout(clickCoolTimer);
+        clickCoolTimer=setTimeout(()=>{ clickCount=0; if(!isWalking) setSkin('normal'); },8000);
+        if(clickCount>=10){     setSkin('cry');       showDlg("嗚嗚...你太過分了 😭💢",4500); }
+        else if(clickCount>=7){ setSkin('angryFist'); showDlg("再點我我就咬你！😡",4000); spawnParticles(cx+20,cy,'star',6); }
+        else if(clickCount>=5){ setSkin('surprised'); showDlg("欸？！你想幹嘛！😲",3500); }
+        else if(clickCount>=3){ setSkin('shy');       showDlg("好啦好啦 人家知道了嘛 >///<",4000); }
+        else if(clickCount===2){ setSkin('happy');    showDlg("嘻嘻，被摸摸好開心！🐹",4000); spawnParticles(cx+20,cy,'heart',6); }
+        else {
+          setSkin('loveEyes'); spawnParticles(cx+20,cy,'heart',5);
+          const lines=["今天有摸摸羊毛嗎？🐑","每一針戳刺，都是一段回憶 ✨","今天要製作哪一隻呢？🧶","雖然是羊毛做的，但心裡暖暖的 ☀️","要不要去作品集看看？🖼️","辛苦的職人需要你們的支持 🙏"];
+          showDlg(lines[Math.floor(rnd(lines.length))],5000);
+        }
+        setTimeout(()=>{ if(clickCount<=5&&!isWalking&&!isDragging) setSkin('normal'); },5000);
+      },300);
+    });
+
+    function warpSide(){
+      if(isDragging||isSleeping||vroomActive||rnd(1)>.12) return;
+      const b=getBounds();
+      setSkin('vroomRun'); showDlg("我去繞一圈！ 👋",1500);
+      walkTo(b.minX-110,cy,true);
+      setTimeout(()=>{
+        if(isDragging) return;
+        cx=b.maxX+110; cy=b.minY+rnd(b.maxY-b.minY);
+        petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+        setSkin('happy'); showDlg("我回來了！😆",2000);
+        randomWalk(false); schedNext(4000);
+      },2600);
+    }
+
+    window.addEventListener('resize',()=>{
+      const b=getBounds(); cx=clamp(cx,b.minX,b.maxX); cy=clamp(cy,b.minY,b.maxY);
+      petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+    });
+
+    setInterval(()=>{ warpSide(); },30000);
+
+    // 初始化位置
+    petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
+    setSkin('happy');
+    showDlg("哈囉！歡迎來到絨日！🐹",3000);
+    resetSleepTimer();
+    schedNext(4000);
+
+    // ★ 手機版：頁面載入後立即啟動自動漫步
+    if(isMobile) {
+      setTimeout(()=>{ scheduleMobileWalk(); }, 1500);
+    }
+
+  })();
+
+}); // end DOMContentLoaded
+</script>
+
+</body>
+</html>

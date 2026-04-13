@@ -1,0 +1,274 @@
+/* --- 絨日 RongRi - 全域核心設計 --- */
+:root {
+    --primary-warm: #a68b7c;
+    --text-main: #4a4a4a;
+    --text-light: #8c8c8c;
+    --bg-color: #fdfaf5;
+    --nav-bg: rgba(253, 250, 245, 0.85);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- 導覽列 --- */
+.main-nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    transition: all 0.4s ease; padding: 20px 0;
+}
+.nav-container {
+    max-width: 1100px; margin: 0 auto; padding: 0 25px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+    font-family: 'Noto Serif TC', serif; font-size: 1.4rem;
+    color: var(--primary-warm); text-decoration: none; font-weight: 700;
+    letter-spacing: 2px;
+}
+.nav-links a {
+    text-decoration: none; color: var(--text-main); font-size: 0.9rem;
+    margin-left: 30px; transition: 0.3s; letter-spacing: 1px;
+}
+.nav-links a:hover { color: var(--primary-warm); }
+.nav-scrolled {
+    background: var(--nav-bg); padding: 12px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); backdrop-filter: blur(10px);
+}
+
+/* 背景 */
+.background-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: url('https://res.cloudinary.com/dkon1zhws/image/upload/back.png') no-repeat center center;
+    background-size: cover; opacity: 0.12; z-index: -1; filter: blur(2px);
+}
+
+/* Header */
+header { text-align: center; padding: 140px 20px 60px; }
+.logo-large { width: 160px; height: auto; margin-bottom: 30px; }
+.brand-title-main { font-family: 'Noto Serif TC', serif; color: var(--primary-warm); letter-spacing: 3px; }
+
+/* --- 品牌故事 --- */
+.about-story-curated { max-width: 900px; margin: 0 auto 120px; padding: 0 25px; scroll-margin-top: 100px; }
+.story-border-box { position: relative; border: 1px solid rgba(166, 139, 124, 0.3); padding: 70px 40px; background: rgba(255,255,255,0.5); }
+.story-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--bg-color); padding: 0 20px; font-size: 0.75rem; letter-spacing: 4px; color: var(--text-light); }
+.story-title { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; color: var(--primary-warm); text-align: center; margin-bottom: 25px; }
+.story-slogan-gold { text-align: center; font-family: 'Noto Serif TC', serif; font-weight: 700; margin-bottom: 40px; }
+.drop-cap::first-letter { font-family: 'Noto Serif TC', serif; font-size: 3.2rem; float: left; margin-right: 12px; color: var(--primary-warm); line-height: 1; }
+.story-detail-grid { margin-top: 50px; display: grid; gap: 40px; }
+.story-detail-item h3 { color: var(--primary-warm); margin-bottom: 10px; text-align: center; font-size: 1.1rem; font-family: 'Noto Serif TC', serif; }
+.story-detail-item h3 span { opacity: 0.5; font-size: 0.8rem; margin-right: 10px; border-bottom: 1px solid var(--primary-warm); }
+
+/* --- 統一標題 --- */
+.section-title, .gallery-title {
+    text-align: center;
+    font-family: 'Noto Serif TC', serif;
+    color: var(--primary-warm);
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+/* --- 連結與按鈕 --- */
+.links-container { text-align: center; margin-bottom: 100px; scroll-margin-top: 100px; }
+.btn-shop { text-decoration: none; color: var(--primary-warm); border: 1.5px solid var(--primary-warm); padding: 12px 35px; border-radius: 50px; transition: 0.4s; display: inline-block; margin: 10px; }
+.btn-shop:hover { background: var(--primary-warm); color: #fff; }
+.social-buttons { margin-top: 20px; }
+.social-buttons a { text-decoration: none; color: var(--text-light); margin: 0 15px; }
+
+/* --- 訂製流程 --- */
+.section-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.3em;
+    color: var(--primary-warm); margin-bottom: 1rem; display: block; text-align: center;
+}
+.divider {
+    width: 40px; height: 1px; background: var(--primary-warm);
+    margin: 0 auto 2rem; opacity: 0.6;
+}
+.price-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin: 3rem 0;
+}
+.price-card {
+    background: #fff; padding: 3rem; border-radius: 15px;
+    text-align: center; border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+}
+.price-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.price-card h4 { font-family: 'Noto Serif TC', serif; color: var(--text-main); margin-bottom: 1rem; }
+.price { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-style: italic; color: var(--primary-warm); }
+.price-notice { text-align: center; font-size: 0.85rem; color: var(--text-light); margin-bottom: 4rem; }
+.combined-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; text-align: left; }
+.step-item { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; }
+.step-no { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; color: var(--primary-warm); opacity: 0.7; min-width: 45px; }
+.step-info h4 { margin-bottom: 0.5rem; color: var(--text-main); font-family: 'Noto Serif TC', serif; }
+.step-info p { font-size: 0.95rem; color: var(--text-light); font-weight: 300; }
+
+/* --- 注意事項 --- */
+.notice-sidebar { background: #fff; padding: 2.5rem; border-radius: 15px; border: 1px solid rgba(0,0,0,0.03); align-self: start; }
+.notice-card { background: #ffffff; padding: 3.5rem 2.5rem; border-radius: 4px; border: 1px solid rgba(166,139,124,0.15); box-shadow: 0 15px 35px rgba(0,0,0,0.02); }
+.notice-card h3 { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; color: var(--primary-warm); letter-spacing: 0.2em; margin-bottom: 2.5rem; text-align: center; position: relative; padding-bottom: 1.2rem; }
+.notice-card h3::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 30px; height: 1px; background: var(--primary-warm); opacity: 0.5; }
+.notice-list { list-style: none; padding: 0; }
+.notice-list li { font-family: 'Noto Sans TC', sans-serif; font-size: 0.92rem; color: var(--text-main); line-height: 2.2; margin-bottom: 1.5rem; padding-left: 1.5rem; position: relative; letter-spacing: 0.03em; }
+.notice-list li::before { content: "•"; color: var(--primary-warm); position: absolute; left: 0; font-size: 1.2rem; }
+.notice-list li strong { color: var(--primary-warm); font-weight: 600; margin-right: 5px; }
+
+/* --- CTA --- */
+.cta-container { text-align: center; margin-top: 4rem; padding-bottom: 5rem; }
+.btn-cta-line {
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: transparent; color: var(--primary-warm);
+    border: 1.5px solid var(--primary-warm); padding: 15px 55px;
+    border-radius: 50px; text-decoration: none;
+    font-family: 'Noto Serif TC', serif; font-size: 1.1rem;
+    letter-spacing: 3px; transition: all 0.4s ease;
+}
+.btn-cta-line:hover { background-color: var(--primary-warm); color: #fff; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(166,139,124,0.2); }
+
+/* --- 作品集 --- */
+.gallery-section { padding: 100px 0; background-color: transparent; }
+.gallery-hint { text-align: center; font-size: 0.75rem; color: var(--text-light); margin-bottom: 30px; letter-spacing: 0.1em; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; }
+.gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1/1; cursor: pointer; background: #fdfaf7; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.165,0.84,0.44,1); }
+.gallery-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(166,139,124,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.4s ease; z-index: 2; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-label { color: white; font-family: 'Noto Serif TC', serif; font-size: 1.1rem; letter-spacing: 0.1em; border: 1px solid white; padding: 8px 15px; }
+
+/* --- 燈箱 --- */
+.lightbox { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center; flex-direction: column; }
+.lightbox.active { display: flex !important; }
+.lightbox-img { max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
+.lightbox-caption { color: white; margin-top: 20px; font-family: 'Noto Serif TC', serif; font-size: 1.2rem; }
+.lightbox-close { position: absolute; top: 30px; right: 30px; color: white; font-size: 2rem; background: none; border: none; cursor: pointer; }
+
+/* --- Footer --- */
+footer { padding: 40px 20px; background: #f9f6f2; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+.footer-bottom { padding: 20px; font-size: 0.85rem; color: var(--text-light); }
+.footer-line-btn { background: #06C755; color: white; text-decoration: none; padding: 12px 25px; border-radius: 50px; display: inline-flex; align-items: center; }
+
+/* ★ 回頂端按鈕 → 移至左下，不與右下倉鼠/LINE衝突 */
+#scrollTopBtn {
+    display: none; position: fixed;
+    bottom: 30px; left: 30px;
+    background: var(--primary-warm); color: white;
+    border: none; padding: 12px 18px; border-radius: 50px;
+    cursor: pointer; z-index: 200;
+    font-family: 'Noto Sans TC', sans-serif; font-size: 0.8rem;
+    transition: opacity 0.3s;
+}
+#scrollTopBtn:hover { opacity: 0.85; }
+
+/* ★ 浮動 LINE 諮詢按鈕 */
+#float-line-btn {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; bottom: 30px; right: 30px;
+    width: 54px; height: 54px;
+    background: #06C755; border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(6,199,85,0.35);
+    z-index: 200; text-decoration: none;
+    animation: lineFloat 3s ease-in-out infinite, linePulse 2.5s ease-in-out infinite;
+    transition: transform 0.2s;
+}
+#float-line-btn:hover { transform: scale(1.1); }
+#float-line-btn img { width: 30px; height: 30px; filter: brightness(0) invert(1); }
+
+@keyframes lineFloat  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+@keyframes linePulse  { 0%,100%{box-shadow:0 4px 16px rgba(6,199,85,.35)} 50%{box-shadow:0 4px 24px rgba(6,199,85,.6)} }
+#float-line-btn:hover { animation: none; transform: scale(1.1); }
+
+/* --- contact --- */
+.contact-section { background: #f9f6f2; border-top: 1px solid rgba(0,0,0,0.05); }
+.contact-inner { text-align: center; padding: 60px 20px; }
+.contact-desc { color: var(--text-light); margin-bottom: 30px; }
+.contact-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.line-icon { width: 20px; margin-right: 10px; filter: brightness(0) invert(1); }
+
+/* --- 動畫 --- */
+.fade-in { animation: fadeIn 1.5s ease-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- 漢堡選單 --- */
+.menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.menu-toggle .bar { width: 25px; height: 2px; background-color: var(--primary-warm); transition: all 0.3s ease; }
+
+/* --- 倉鼠容器 --- */
+#hamster-pet-container { position: fixed; z-index: 9999; pointer-events: none; top: 0; left: 0; width: 100vw; height: 100vh; }
+#pet-body { position: absolute; pointer-events: auto; cursor: pointer; z-index: 9999; }
+#pet-img { width: 80px; height: auto; transition: transform 0.3s ease; display: block; }
+#pet-dialog {
+    position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    background: white; border: 1px solid #a68b7c; padding: 5px 10px; border-radius: 10px;
+    font-size: 12px; white-space: nowrap; display: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    font-family: 'Noto Sans TC', sans-serif; color: var(--text-main); z-index: 10000;
+}
+
+/* --- 瀑布流（保留） --- */
+@media (min-width: 900px) { .masonry-grid { column-count: 3; } }
+.masonry-item { display: inline-block; width: 100%; margin-bottom: 30px; background: #fff; padding: 15px; border-radius: 4px; transition: 0.4s; text-align: center; }
+.masonry-item img { width: 100%; cursor: zoom-in; }
+.masonry-item p { font-family: 'Noto Serif TC', serif; color: var(--primary-warm); margin-top: 10px; }
+.masonry-item:hover { transform: translateY(-10px) rotate(1.5deg); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+/* --- RWD --- */
+@media (max-width: 768px) {
+    .combined-grid, .price-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .menu-toggle { display: flex; z-index: 1001; }
+    .nav-links {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; right: -100%;
+        width: 75%; height: 100vh;
+        background: var(--nav-bg); backdrop-filter: blur(15px);
+        padding-top: 100px;
+        transition: 0.4s cubic-bezier(0.165,0.84,0.44,1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05); z-index: 1000;
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { margin: 20px 0 !important; font-size: 1.1rem !important; text-align: center; width: 100%; margin-left: 0 !important; }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    header { padding: 120px 20px 50px; }
+    .logo-large { width: 130px; }
+    .btn-cta-line { width: 85%; padding: 12px 20px; font-size: 1rem; letter-spacing: 2px; }
+    #pet-img { width: 60px; }
+    #pet-dialog { font-size: 11px; padding: 4px 8px; }
+    /* 手機版浮動按鈕縮小一點 */
+    #float-line-btn { width: 48px; height: 48px; bottom: 20px; right: 20px; }
+    #float-line-btn img { width: 26px; height: 26px; }
+    #scrollTopBtn { bottom: 20px; left: 20px; }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; padding: 0 15px !important; }
+    .masonry-grid { column-count: 1 !important; }
+    .section { padding: 50px 15px !important; }
+    .brand-title-main { font-size: 1.8rem; }
+    header { padding: 100px 15px 40px !important; }
+    .price-card { padding: 2rem 1.5rem !important; }
+    footer { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* 燈箱手機優化 */
+.lightbox-img { max-width: 95%; max-height: 75vh; }
+
+/* 捲動淡入 */
+.reveal-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-section.revealed { opacity: 1; transform: translateY(0); }
