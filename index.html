@@ -1118,7 +1118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const preload=new Image();
       preload.onload=()=>{ if(imgEl){ imgEl.style.display='block'; imgEl.src=pick.src; } };
-      preload.onerror=()=>{ if(imgEl){ imgEl.style.display='none'; } };
+preload.onerror=()=>{ if(imgEl){ imgEl.style.display='none'; } isBusy=false; schedNext(3000); };
       preload.src=pick.src;
       setTimeout(()=>{
         setSkin('happySeed');
@@ -1127,13 +1127,18 @@ document.addEventListener("DOMContentLoaded", function () {
       },5500);
     }
 
-    setTimeout(()=>{
-      if (isBusy) {
-        const waitBusy=setInterval(()=>{ if(!isBusy){ clearInterval(waitBusy); triggerMemory(); } },2000);
-      } else {
-        triggerMemory();
-      }
-    },60000);
+   setTimeout(()=>{
+  if (isBusy) {
+    const waitBusy=setInterval(()=>{ if(!isBusy){ clearInterval(waitBusy); triggerMemory(); } },2000);
+  } else {
+    triggerMemory();
+  }
+},60000);
+
+// 保險機制：若 isBusy 卡住，60秒後強制解除
+setTimeout(()=>{
+  if(isBusy){ isBusy=false; schedNext(2000); }
+}, 60000);
 
     setTimeout(()=>{
       if (!hasShownMemory&&!isSleeping&&!isDragging) {
