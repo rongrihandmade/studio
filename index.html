@@ -1163,7 +1163,7 @@ preload.onerror=()=>{ if(imgEl){ imgEl.style.display='none'; } isBusy=false; sch
 // 保險機制：若 isBusy 卡住，60秒後強制解除
 setTimeout(()=>{
   if(isBusy){ isBusy=false; schedNext(2000); }
-}, 60000);
+}, 120000);
 
     setTimeout(()=>{
       if (!hasShownMemory&&!isSleeping&&!isDragging) {
@@ -1568,6 +1568,7 @@ setTimeout(()=>{
 
 }); // end DOMContentLoaded
 </script>
+    <script>
 // ── 葵瓜子彩蛋 ──
 (function(){
   const logo = document.getElementById('nav-logo-seed');
@@ -1691,6 +1692,6 @@ setTimeout(()=>{
   }
 
 })();
-        
+        </script>
 </body>
 </html>
