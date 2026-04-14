@@ -1615,6 +1615,82 @@ setTimeout(()=>{
     }
   });
 })();
+
+        // ── 音效系統 ──
+(function(){
+  let audioCtx = null;
+
+  function getCtx(){
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    return audioCtx;
+  }
+
+  // 倉鼠啾啾聲
+  function playHamsterSound(){
+    try {
+      const ctx = getCtx();
+      const t = ctx.currentTime;
+
+      // 第一聲啾
+      const osc1 = ctx.createOscillator();
+      const gain1 = ctx.createGain();
+      osc1.connect(gain1); gain1.connect(ctx.destination);
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(900, t);
+      osc1.frequency.exponentialRampToValueAtTime(1400, t + 0.08);
+      osc1.frequency.exponentialRampToValueAtTime(1000, t + 0.15);
+      gain1.gain.setValueAtTime(0.18, t);
+      gain1.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+      osc1.start(t); osc1.stop(t + 0.18);
+
+      // 第二聲啾（稍後）
+      const osc2 = ctx.createOscillator();
+      const gain2 = ctx.createGain();
+      osc2.connect(gain2); gain2.connect(ctx.destination);
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(1000, t + 0.22);
+      osc2.frequency.exponentialRampToValueAtTime(1500, t + 0.30);
+      osc2.frequency.exponentialRampToValueAtTime(1100, t + 0.38);
+      gain2.gain.setValueAtTime(0.14, t + 0.22);
+      gain2.gain.exponentialRampToValueAtTime(0.001, t + 0.40);
+      osc2.start(t + 0.22); osc2.stop(t + 0.40);
+    } catch(e){}
+  }
+
+  // 葵瓜子叮叮聲
+  function playSeedSound(){
+    try {
+      const ctx = getCtx();
+      for(let i = 0; i < 3; i++){
+        setTimeout(()=>{
+          const t = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(1200 + i*180, t);
+          osc.frequency.exponentialRampToValueAtTime(800 + i*100, t + 0.12);
+          gain.gain.setValueAtTime(0.12, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+          osc.start(t); osc.stop(t + 0.15);
+        }, i * 90);
+      }
+    } catch(e){}
+  }
+
+  // 掛載到倉鼠點擊
+  const petBody = document.getElementById('pet-body');
+  if(petBody){
+    petBody.addEventListener('click', ()=>{ playHamsterSound(); });
+  }
+
+  // 掛載到 Logo 葵瓜子
+  const logoBtn = document.getElementById('nav-logo-seed');
+  if(logoBtn){
+    logoBtn.addEventListener('click', ()=>{ playSeedSound(); });
+  }
+
+})();
         
 </body>
 </html>
