@@ -229,7 +229,7 @@
 }
 .price-card-img {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/2;
     object-fit: cover;
     display: block;
 }
@@ -388,6 +388,14 @@
     .contact-channels { grid-template-columns: 1fr; }
     .lead-time-banner { padding: 1rem 1.2rem; }
   }
+
+@media (max-width: 380px) {
+  .hero-btn-primary, .hero-btn-secondary {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
     </style>
 </head>
 <body>
@@ -752,11 +760,6 @@
 @keyframes memCaptionIn { 0%{opacity:0;transform:translateY(8px)} 100%{opacity:1;transform:translateY(0)} }
 @keyframes memFrameIn   { 0%{opacity:0;transform:scale(.92)} 100%{opacity:1;transform:scale(1)} }
 @keyframes memBtnIn     { 0%{opacity:0} 100%{opacity:1} }
-@keyframes hPawFade   { 0%{opacity:.7} 100%{opacity:0} }
-@keyframes hHeartUp   { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(-60px) scale(.5);opacity:0} }
-@keyframes hSeedFall  { 0%{transform:translateY(0) rotate(0);opacity:1} 100%{transform:translateY(50px) rotate(180deg);opacity:0} }
-@keyframes hStarPop   { 0%{transform:scale(0);opacity:1} 100%{transform:scale(1.5);opacity:0} }
-@keyframes hDarkGlow  { 0%,100%{opacity:.7} 50%{opacity:1} }
 @keyframes seedDrop {
   0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
   100% { transform: translateY(80px) rotate(200deg); opacity: 0; }
@@ -968,7 +971,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     function setSkin(k) { petImg.src = SK[k] || SK.normal; }
 
-    const isMobile = window.innerWidth <= 600;
+    const isMobile = window.matchMedia('(max-width: 600px)').matches;
     // ★ 手機版：初始位置設為畫面中央，而非右下角
     let cx = isMobile ? window.innerWidth * 0.5 : window.innerWidth / 2;
     let cy = isMobile ? window.innerHeight * 0.5 : window.innerHeight * 0.7;
