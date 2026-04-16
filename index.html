@@ -1049,6 +1049,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function spawnPaw(x, y) {
       if (Math.hypot(x-lastPawX, y-lastPawY) < 28) return;
       lastPawX=x; lastPawY=y;
+      if(typeof playPawSound==='function') playPawSound();
       const onGallery = !!document.elementFromPoint(cx+40,cy+40)?.closest('#gallery');
       const el = document.createElement('div');
       el.style.cssText = `position:absolute;left:${x}px;top:${y}px;font-size:${onGallery?14:11}px;
@@ -1255,6 +1256,7 @@ setTimeout(()=>{
             if(!isWalking&&!isDragging){
               isSleeping=true; setSkin('sleepingZzz'); showDlg("zzZZ... 🌙",8000);
               spawnParticles(cx+20,cy,'star',3);
+              if(typeof startSnoreSound==='function') startSnoreSound();
             }
           },45000);
         }
@@ -1479,7 +1481,9 @@ setTimeout(()=>{
     },{passive:true});
 
     function startDrag(cX,cY){
-      isDragging=true; isWalking=false; isSleeping=false;
+      isDragging=true; isWalking=false;
+      if(isSleeping){ if(typeof stopSnoreSound==='function') stopSnoreSound(); }
+      isSleeping=false;
       stopWalk();
       if(sleepTimer) clearTimeout(sleepTimer);
       if(mobileWalkTimer) clearTimeout(mobileWalkTimer);
@@ -1527,6 +1531,7 @@ setTimeout(()=>{
     }
     function landBounce(){
       setSkin('normal'); showDlg("咚！落地了 ✨",1500); spawnParticles(cx+20,cy+40,'star',3);
+      if(typeof playThudSound==='function') playThudSound();
       let bc=0;
       function bounce(){
         bc++;
@@ -1564,6 +1569,7 @@ setTimeout(()=>{
         clickCount++;
         if(isSleeping){
           isSleeping=false; if(sleepTimer) clearTimeout(sleepTimer);
+          if(typeof stopSnoreSound==='function') stopSnoreSound();
           setSkin('surprised'); showDlg("欸！？誰叫我起來！😲",2000);
           spawnParticles(cx+20,cy,'star',3);
           setTimeout(()=>{ setSkin('normal'); resetSleepTimer(); },2500); return;
@@ -1607,7 +1613,40 @@ setTimeout(()=>{
 
     setInterval(()=>{ warpSide(); },30000);
 
-    // 初始化位置
+    // ─── 閒置偵測：2 分鐘沒有滑鼠/滾動動作 ───
+    let idleTimer = null;
+    const IDLE_DELAY = 2 * 60 * 1000; // 2 分鐘
+    let idleTriggered = false;
+
+    function resetIdleTimer() {
+      idleTriggered = false;
+      if(idleTimer) clearTimeout(idleTimer);
+      idleTimer = setTimeout(()=>{
+        if(isDragging||isBusy) return;
+        idleTriggered = true;
+        // 走到畫面中央
+        const b = getBounds();
+        const midX = (b.minX + b.maxX) / 2;
+        const midY = (b.minY + b.maxY) / 2;
+        stopWalk();
+        setSkin('curious');
+        walkTo(midX, midY, false);
+        setTimeout(()=>{
+          if(idleTriggered){
+            setSkin('loveEyes');
+            showDlg("你還在嗎？🥺",6000);
+            spawnParticles(midX+20, midY,'heart',4);
+          }
+        }, Math.hypot(midX-cx, midY-cy) / 0.9 * (1000/60) + 500);
+      }, IDLE_DELAY);
+    }
+
+    document.addEventListener('mousemove', ()=>{ resetIdleTimer(); }, {passive:true});
+    document.addEventListener('scroll',    ()=>{ resetIdleTimer(); }, {passive:true});
+    document.addEventListener('touchstart',()=>{ resetIdleTimer(); }, {passive:true});
+    resetIdleTimer();
+
+    // ─── 初始化位置
     petBody.style.left=cx+'px'; petBody.style.top=cy+'px';
     setSkin('happy');
     showDlg("哈囉！歡迎來到絨日！🐹",3000);
@@ -1713,6 +1752,104 @@ setTimeout(()=>{
     } catch(e){}
   }
 
+  // 落地碰聲（低頻短促衰減音）
+  function playThudSound(){
+    try {
+      const ctx = getCtx();
+      const t = ctx.currentTime;
+      // 低頻底鼓感：OscillatorNode + 快速 pitch drop
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const dist = ctx.createWaveShaper();
+      // 輕微失真讓撞擊感更實
+      const curve = new Float32Array(256);
+      for(let i=0;i<256;i++){ const x=i/128-1; curve[i]=x<0?-Math.pow(-x,.7):Math.pow(x,.7); }
+      dist.curve = curve;
+      osc.connect(dist); dist.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(120, t);
+      osc.frequency.exponentialRampToValueAtTime(38, t + 0.12);
+      gain.gain.setValueAtTime(0.32, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.22);
+      osc.start(t); osc.stop(t + 0.22);
+      // 第二層：噪音短衝擊感
+      const buf = ctx.createBuffer(1, ctx.sampleRate * 0.04, ctx.sampleRate);
+      const data = buf.getChannelData(0);
+      for(let i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,2);
+      const src = ctx.createBufferSource();
+      const ng = ctx.createGain();
+      src.buffer = buf;
+      src.connect(ng); ng.connect(ctx.destination);
+      ng.gain.setValueAtTime(0.10, t);
+      ng.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+      src.start(t);
+    } catch(e){}
+  }
+
+  // 倉鼠睡著輕鼾聲（週期性低頻，非常小聲）
+  let snoreInterval = null;
+  function startSnoreSound(){
+    if(snoreInterval) return;
+    function oneSnore(){
+      try {
+        const ctx = getCtx();
+        const t = ctx.currentTime;
+        // 吸氣：上升
+        const o1 = ctx.createOscillator();
+        const g1 = ctx.createGain();
+        o1.connect(g1); g1.connect(ctx.destination);
+        o1.type = 'sine';
+        o1.frequency.setValueAtTime(160, t);
+        o1.frequency.linearRampToValueAtTime(220, t + 0.28);
+        g1.gain.setValueAtTime(0.0, t);
+        g1.gain.linearRampToValueAtTime(0.05, t + 0.12);
+        g1.gain.linearRampToValueAtTime(0.0, t + 0.30);
+        o1.start(t); o1.stop(t + 0.30);
+        // 呼氣：下降
+        const o2 = ctx.createOscillator();
+        const g2 = ctx.createGain();
+        o2.connect(g2); g2.connect(ctx.destination);
+        o2.type = 'sine';
+        o2.frequency.setValueAtTime(200, t + 0.40);
+        o2.frequency.linearRampToValueAtTime(120, t + 0.70);
+        g2.gain.setValueAtTime(0.0, t + 0.40);
+        g2.gain.linearRampToValueAtTime(0.04, t + 0.52);
+        g2.gain.linearRampToValueAtTime(0.0, t + 0.72);
+        o2.start(t + 0.40); o2.stop(t + 0.72);
+      } catch(e){}
+    }
+    oneSnore();
+    snoreInterval = setInterval(oneSnore, 2400);
+  }
+  function stopSnoreSound(){
+    if(snoreInterval){ clearInterval(snoreInterval); snoreInterval=null; }
+  }
+
+  // 爪印輕拍聲（柔軟拍擊感）
+  function playPawSound(){
+    try {
+      const ctx = getCtx();
+      const t = ctx.currentTime;
+      const buf = ctx.createBuffer(1, ctx.sampleRate * 0.06, ctx.sampleRate);
+      const data = buf.getChannelData(0);
+      for(let i=0;i<data.length;i++){
+        const env = Math.pow(1 - i/data.length, 1.8);
+        data[i] = (Math.random()*2-1) * env * 0.5;
+      }
+      const src = ctx.createBufferSource();
+      const g = ctx.createGain();
+      // 低通讓它聽起來像肉掌，不刺耳
+      const lp = ctx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 700;
+      src.buffer = buf;
+      src.connect(lp); lp.connect(g); g.connect(ctx.destination);
+      g.gain.setValueAtTime(0.055, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+      src.start(t);
+    } catch(e){}
+  }
+
   // 葵瓜子叮叮聲
   function playSeedSound(){
     try {
@@ -1735,6 +1872,11 @@ setTimeout(()=>{
   }
 
   // 掛載到倉鼠點擊
+  window.playThudSound  = playThudSound;
+  window.startSnoreSound= startSnoreSound;
+  window.stopSnoreSound = stopSnoreSound;
+  window.playPawSound   = playPawSound;
+
   const petBody = document.getElementById('pet-body');
   if(petBody){
     petBody.addEventListener('click', ()=>{ playHamsterSound(); });
