@@ -381,8 +381,8 @@
     .contact-channels { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
-    .hero-content { padding: 120px 20px 60px; }
-    .hero-logo { width: 110px; }
+   .hero-content { padding: 110px 24px 50px; }
+    .hero-logo { width: 100px; }
     .hero-cta-group { flex-direction: column; align-items: center; }
     .hero-btn-primary, .hero-btn-secondary { width: 260px; text-align: center; }
     .contact-channels { grid-template-columns: 1fr; }
@@ -901,7 +901,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (topBtn) topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // ─── 燈箱 ───
+// ─── Gallery touch overlay ───
+  if ('ontouchstart' in window) {
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        if (!this.classList.contains('touch-active')) {
+          e.stopPropagation();
+          document.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('touch-active'));
+          this.classList.add('touch-active');
+          return;
+        }
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('touch-active'));
+    });
+  } 
+
+
+ // ─── 燈箱 ───
   const lightbox        = document.getElementById('lightbox');
   const lightboxImg     = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
@@ -995,9 +1013,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function rnd(n) { return Math.random() * n; }
     function clamp(v, lo, hi) { return Math.max(lo, Math.min(v, hi)); }
-    function getBounds() {
+  function getBounds() {
       const sz = window.innerWidth <= 600 ? 60 : 80;
-      return { minX:10, minY:70, maxX:window.innerWidth-sz-10, maxY:window.innerHeight-sz-10 };
+      const bottomPad = window.innerWidth <= 600 ? 85 : 20;
+      return { minX:10, minY:70, maxX:window.innerWidth-sz-10, maxY:window.innerHeight-sz-bottomPad };
     }
 
     moodClose.onclick = () => { moodCard.style.display='none'; document.body.style.overflow=''; isBusy=false; schedNext(3000); };
