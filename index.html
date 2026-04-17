@@ -1926,5 +1926,23 @@ setTimeout(()=>{ sectionDlgCooldown = false; }, 8000);  // ← 新增這行
 
 })();
         </script>
+<script>
+const btn = document.getElementById("hamster-toggle-btn");
+
+const hamster = document.getElementById("hamster-pet-container");
+const paw = document.getElementById("paw-layer");
+const particle = document.getElementById("particle-layer");
+const glow = document.getElementById("dark-glow");
+
+btn.addEventListener("click", () => {
+  hamster.classList.toggle("hamster-hidden");
+  paw.classList.toggle("hamster-hidden");
+  particle.classList.toggle("hamster-hidden");
+  glow.classList.toggle("hamster-hidden");
+
+  btn.classList.toggle("hamster-off");
+});
+</script>
+
 </body>
 </html>
