@@ -388,3 +388,26 @@ footer { padding: 40px 20px; background: #f9f6f2; text-align: center; border-top
         line-height: 2;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-slogan {
+        font-size: 0.88rem;
+        line-height: 2.2;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    .hero-subtext {
+        font-size: 0.78rem;
+        margin-bottom: 24px;
+    }
+}
+
+@media (hover: none) {
+    .gallery-item.touch-active .gallery-overlay {
+        opacity: 1;
+        transform: scale(1.05) translateY(-4px);
+    }
+    .gallery-item.touch-active img {
+        transform: scale(1.05) translateY(-4px);
+    }
+}
