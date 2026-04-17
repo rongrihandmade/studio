@@ -172,7 +172,7 @@
 }
 .hero-scroll-hint {
     position: absolute;
-    bottom: 70px;
+    bottom: 72px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -181,6 +181,11 @@
     align-items: center;
     gap: 6px;
     animation: bounceDown 2s ease-in-out infinite;
+}
+@media (max-width: 600px) {
+    .hero-scroll-hint {
+        display: none;
+    }
 }
 .hero-scroll-hint span {
     font-size: 0.7rem;
@@ -610,51 +615,110 @@
   <svg class="deco-right" width="36" height="20" viewBox="0 0 36 20"><path d="M4 10 Q14 2 22 10 Q28 16 34 10" stroke="#a68b7c" stroke-width="1.2" fill="none" opacity=".5" stroke-linecap="round"/><circle cx="34" cy="10" r="2" fill="#a68b7c" opacity=".4"/></svg>
 </h2>
       <div class="divider"></div>
-      <p class="gallery-hint">( 點擊圖片查看細節 )</p>
+<p class="gallery-hint">( 手機：點一下看說明，再點進入大圖 )</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg','黃金鼠-探頭相框款')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg" alt="羊毛氈手作作品－黃金鼠-探頭相框款" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-探頭相框款</span><span class="gallery-quote">雖然牠不在身邊了，<br>指尖觸碰到的溫度依舊真實</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg','黃金鼠-全身款-午後小憩')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-午後小憩" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-午後小憩</span><span class="gallery-quote">記憶裡最溫柔的那一個下午</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg','黃金鼠-全身款-掌心溫度')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-掌心溫度" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-掌心溫度</span> <span class="gallery-quote">小小的重量，<br>大大的存在</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg','黃金鼠-全身款-塞滿嘴')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-塞滿嘴" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-塞滿嘴</span><span class="gallery-quote">牠以前最喜歡把食物塞滿嘴，<br>那個樣子，我一輩子都忘不掉</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg','黃金鼠-全身款-坐姿睡態')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-坐姿睡態" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-坐姿睡態</span><span class="gallery-quote">最愛的姿勢，<br>就這樣定格了</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg','黃金鼠-全身款-站立')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-站立" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-站立</span><span class="gallery-quote">牠總是這樣看著我，<br>好像在說，你回來了</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg','黃金鼠-全身款-特殊植毛系列')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg" alt="羊毛氈手作作品－黃金鼠-全身款-特殊植毛系列" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金鼠-全身款-特殊植毛系列</span><span class="gallery-quote">每一根毛，<br>都是一份思念</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg','黃金角蛙')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg" alt="羊毛氈手作作品－黃金角蛙" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">黃金角蛙</span><span class="gallery-quote">每一針都是對牠的深深思念</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg','白文鳥')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg" alt="羊毛氈手作作品－白文鳥" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">白文鳥</span><span class="gallery-quote">牠飛走了，<br>但這裡還留著牠的重量</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg','侏儒小倉')">
-        <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg" alt="羊毛氈手作作品－侏儒小倉" loading="lazy" width="280" height="280">
-        <div class="gallery-overlay"><span class="gallery-label">侏儒小倉</span><span class="gallery-quote">牠說，<br>謝謝你一直愛牠</span></div>
-      </div>
+   <div class="gallery-grid">
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg"
+    data-cap="黃金鼠-探頭相框款">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product1.jpg"
+      alt="羊毛氈手作作品－黃金鼠-探頭相框款" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-探頭相框款</span>
+      <span class="gallery-quote">雖然牠不在身邊了，<br>指尖觸碰到的溫度依舊真實</span>
     </div>
   </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg"
+    data-cap="黃金鼠-全身款-午後小憩">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product2.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-午後小憩" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-午後小憩</span>
+      <span class="gallery-quote">記憶裡最溫柔的那一個下午</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg"
+    data-cap="黃金鼠-全身款-掌心溫度">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product3.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-掌心溫度" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-掌心溫度</span>
+      <span class="gallery-quote">小小的重量，<br>大大的存在</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg"
+    data-cap="黃金鼠-全身款-塞滿嘴">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product4.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-塞滿嘴" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-塞滿嘴</span>
+      <span class="gallery-quote">牠以前最喜歡把食物塞滿嘴，<br>那個樣子，我一輩子都忘不掉</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg"
+    data-cap="黃金鼠-全身款-坐姿睡態">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product5.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-坐姿睡態" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-坐姿睡態</span>
+      <span class="gallery-quote">最愛的姿勢，<br>就這樣定格了</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg"
+    data-cap="黃金鼠-全身款-站立">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product6.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-站立" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-站立</span>
+      <span class="gallery-quote">牠總是這樣看著我，<br>好像在說，你回來了</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg"
+    data-cap="黃金鼠-全身款-特殊植毛系列">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product7.jpg"
+      alt="羊毛氈手作作品－黃金鼠-全身款-特殊植毛系列" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金鼠-全身款-特殊植毛系列</span>
+      <span class="gallery-quote">每一根毛，<br>都是一份思念</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg"
+    data-cap="黃金角蛙">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product8.jpg"
+      alt="羊毛氈手作作品－黃金角蛙" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">黃金角蛙</span>
+      <span class="gallery-quote">每一針都是對牠的深深思念</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg"
+    data-cap="白文鳥">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product9.jpg"
+      alt="羊毛氈手作作品－白文鳥" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">白文鳥</span>
+      <span class="gallery-quote">牠飛走了，<br>但這裡還留著牠的重量</span>
+    </div>
+  </div>
+  <div class="gallery-item"
+    data-src="https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg"
+    data-cap="侏儒小倉">
+    <img src="https://res.cloudinary.com/dkon1zhws/image/upload/product10.jpg"
+      alt="羊毛氈手作作品－侏儒小倉" loading="lazy" width="280" height="280">
+    <div class="gallery-overlay">
+      <span class="gallery-label">侏儒小倉</span>
+      <span class="gallery-quote">牠說，<br>謝謝你一直愛牠</span>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- Lightbox -->
@@ -902,20 +966,33 @@ document.addEventListener("DOMContentLoaded", function () {
   if (topBtn) topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 // ─── Gallery touch overlay ───
-  if ('ontouchstart' in window) {
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', function(e) {
-        if (!this.classList.contains('touch-active')) {
-          e.stopPropagation();
-          document.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('touch-active'));
-          this.classList.add('touch-active');
-          return;
-        }
-      });
-    });
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('touch-active'));
-    });
+const galleryItems = document.querySelectorAll('.gallery-item');
+const isTouchDevice = 'ontouchstart' in window;
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', function(e) {
+    const src = this.dataset.src;
+    const cap = this.dataset.cap;
+    if (isTouchDevice) {
+      if (!this.classList.contains('touch-active')) {
+        e.stopPropagation();
+        galleryItems.forEach(i => i.classList.remove('touch-active'));
+        this.classList.add('touch-active');
+        return;
+      }
+      galleryItems.forEach(i => i.classList.remove('touch-active'));
+      openLightbox(src, cap);
+    } else {
+      openLightbox(src, cap);
+    }
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.gallery-item')) {
+    galleryItems.forEach(i => i.classList.remove('touch-active'));
+  }
+});
   } 
 
 
@@ -1015,7 +1092,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function clamp(v, lo, hi) { return Math.max(lo, Math.min(v, hi)); }
   function getBounds() {
       const sz = window.innerWidth <= 600 ? 60 : 80;
-      const bottomPad = window.innerWidth <= 600 ? 85 : 20;
+      const bottomPad = window.innerWidth <= 600 ? 110 : 20;
       return { minX:10, minY:70, maxX:window.innerWidth-sz-10, maxY:window.innerHeight-sz-bottomPad };
     }
 
@@ -1182,10 +1259,22 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(()=>{ if(memFrame) memFrame.classList.add('mem-frame-show'); },1200);
         setTimeout(()=>{ if(memBtn)   memBtn.classList.add('mem-btn-show');     },2000);
       }
-      const preload=new Image();
-      preload.onload=()=>{ if(imgEl){ imgEl.style.display='block'; imgEl.src=pick.src; } };
-preload.onerror=()=>{ if(imgEl){ imgEl.style.display='none'; } isBusy=false; schedNext(3000); };
-      preload.src=pick.src;
+     const preload = new Image();
+const preloadFallback = setTimeout(() => {
+  isBusy = false;
+  schedNext(3000);
+}, 15000);
+preload.onload = () => {
+  clearTimeout(preloadFallback);
+  if (imgEl) { imgEl.style.display = 'block'; imgEl.src = pick.src; }
+};
+preload.onerror = () => {
+  clearTimeout(preloadFallback);
+  if (imgEl) { imgEl.style.display = 'none'; }
+  isBusy = false;
+  schedNext(3000);
+};
+preload.src = pick.src;
       setTimeout(()=>{
         setSkin('happySeed');
         showDlg("這是我的朋友 💌 牠在吱吱星球過得很快樂，要我帶這張照片給你",9000);
@@ -1260,7 +1349,7 @@ setTimeout(()=>{
         } else {
           scheduleMobileWalk();
         }
-      }, 3000 + rnd(4000));
+      }, 6000 + rnd(6000));
     }
 
     function randomWalk(far=false) {
@@ -1420,35 +1509,36 @@ Object.entries(sectionDialogs).forEach(([id, lines]) => {
     if(gallerySection&&'IntersectionObserver' in window){
       const galleryObs=new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
-if(e.isIntersecting&&!galleryTriggered&&!isDragging&&!isSleeping&&!sectionDlgCooldown){            
-galleryTriggered=true;sectionDlgCooldown = true;  // ← 新增這行
-setTimeout(()=>{ sectionDlgCooldown = false; }, 8000);  // ← 新增這行
-            const targetX=clamp(window.innerWidth*.5,60,window.innerWidth-100);
-            setSkin('excited');
-            showDlg("等等！我去看一下作品！🏃",2000);
-            setTimeout(()=>{
-              walkTo(targetX,clamp(window.innerHeight*.5,80,window.innerHeight-100),true);
-              setTimeout(()=>{
-  if(!isWalking&&!isDragging){
-    setSkin('painter'); showDlg("這些都是，被好好記住的樣子 🐾",5000);
-    sectionDlgCooldown = true;  // ← 新增
+if(e.isIntersecting&&!galleryTriggered&&!isDragging&&!isSleeping&&!sectionDlgCooldown){
+  galleryTriggered = true;
+  sectionDlgCooldown = true;
+  const targetX = clamp(window.innerWidth*.5, 60, window.innerWidth-100);
+  setSkin('excited');
+  showDlg("等等！我去看一下作品！🏃", 2000);
+  setTimeout(()=>{
+    walkTo(targetX, clamp(window.innerHeight*.5, 80, window.innerHeight-100), true);
     setTimeout(()=>{
-      if(!isWalking&&!isDragging){
-        setSkin('loveEyes'); showDlg("你心裡有沒有一隻，也很想留下來？💕",6000);
-        spawnParticles(cx+20,cy,'heart',5);
-        setTimeout(()=>{ sectionDlgCooldown = false; }, 6000);  // ← 新增，等最後一句說完再解鎖
-      }
-    },4000);
-  }
-},3000);
-            },2200);
-            setTimeout(()=>{ galleryTriggered=false; },30000);
+      if(!isWalking && !isDragging){
+        setSkin('painter');
+        showDlg("這些都是，被好好記住的樣子 🐾", 5000);
+        setTimeout(()=>{
+          if(!isWalking && !isDragging){
+            setSkin('loveEyes');
+            showDlg("你心裡有沒有一隻，也很想留下來？💕", 6000);
+            spawnParticles(cx+20, cy, 'heart', 5);
+            setTimeout(()=>{ sectionDlgCooldown = false; }, 6000);
+          } else {
+            sectionDlgCooldown = false;
           }
-        });
-      },{threshold:0.3});
-      galleryObs.observe(gallerySection);
-    }
-
+        }, 5000);
+      } else {
+        sectionDlgCooldown = false;
+      }
+    }, 3000);
+  }, 2200);
+  setTimeout(()=>{ galleryTriggered = false; }, 30000);
+}
+ 
     function triggerToyCar() {
       if(vroomActive||isDragging) return;
       vroomActive=true;
@@ -1727,10 +1817,12 @@ setTimeout(()=>{ sectionDlgCooldown = false; }, 8000);  // ← 新增這行
       const b = { minX:10, minY:70, maxX:window.innerWidth-90, maxY:window.innerHeight-90 };
       const tx = Math.max(b.minX, Math.min(seedX, b.maxX));
       const ty = Math.max(b.minY, Math.min(seedY, b.maxY));
-      petBody.style.transition = 'left 0.6s cubic-bezier(0.22,1,0.36,1), top 0.6s cubic-bezier(0.22,1,0.36,1)';
-      petBody.style.left = tx + 'px';
-      petBody.style.top = ty + 'px';
-      setTimeout(()=>{ petBody.style.transition = ''; }, 700);
+      if (!petBody.classList.contains('h-dragging')) {
+  petBody.style.transition = 'left 0.6s cubic-bezier(0.22,1,0.36,1), top 0.6s cubic-bezier(0.22,1,0.36,1)';
+  petBody.style.left = tx + 'px';
+  petBody.style.top = ty + 'px';
+  setTimeout(()=>{ petBody.style.transition = ''; }, 700);
+}
     }
   });
 })();
